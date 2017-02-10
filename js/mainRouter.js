@@ -44,7 +44,7 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["css/adminManager.css","js/adminCtrl.js"]);
+                        return $ocLazyLoad.load(["css/adminManager.css","js/admin/adminCtrl.js"]);
                     }]
                 }
             })
