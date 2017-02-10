@@ -5,7 +5,7 @@
             <span>教师用户信息列表</span>
         </div>
         <div class="addTeacherUser">
-            <button class="addTeacher">添加用户</button>
+            <button class="addTeacher" ng-click="addTeacher()">添加用户</button>
         </div>
         <div class="header-menu">
             <input type="text" class="menu-search" placeholder="请输入关键字">
@@ -57,9 +57,9 @@
                     </td>
                     <td>
                         <div class="operation-teacherUsers">
-                            <button class="operation-button">修改密码</button>
-                            <button class="operation-button">查看信息</button>
-                            <button class="operation-button">删除</button>
+                            <button class="operation-button" ng-click="cheangePassword()">修改密码</button>
+                            <button class="operation-button" ng-click="seeTeacherDetails()">查看信息</button>
+                            <button class="operation-button" ng-click="removerTeacher()">删除</button>
                         </div>
                     </td>
                 </tr>
