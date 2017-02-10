@@ -1,0 +1,38 @@
+.homeContainer{
+    width: 1400px;
+    height: 100%;
+}
+.homeContainerList{
+    width: 230px;
+    height: 600px;
+    background-color: #1c2b36 ;
+    color: #869fb1;
+    float: left;
+}
+.chartList{
+
+}
+.chartList ul li{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.chartList ul li:hover{
+    background-color: #c3d0d9;
+    color: #1c2b36;
+}
+.chartCon{
+    width: 1170px;
+    margin-left: 230px;
+    margin-bottom: 80px;
+    overflow: hidden;
+}
+.bottom{
+    width: 1175px;
+    height: 50px;
+    border-top:1px solid #080808;
+    line-height: 50px;
+    text-align: center;
+    margin-left: 230px;
+}

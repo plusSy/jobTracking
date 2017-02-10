@@ -1,0 +1,70 @@
+/*
+管理员界面
+*/
+.adminManager{
+    width: 1040px;
+    margin: 0 auto;
+}
+.teacherUsers{
+    width: 100%;
+    height: 80px;
+}
+.teacherUsersTitle{
+    float: left;
+    margin-top: 30px;
+}
+.header-menu{
+    float: right;
+    margin-top: 25px;
+    margin-right: 35px;
+}
+.menu-search{
+    height: 30px;
+    width: 350px;
+    border-radius: 5px;
+    border: 1px solid #080808;
+    padding-left: 10px;
+}
+.menu-search-icno{
+    margin-left: -36px;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.addTeacherUser{
+    float: right;
+}
+.addTeacher{
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #080808;
+    color: #000000;
+}
+.addTeacher:hover{
+    background-color: #080808;
+    color: #c0c0c0;
+}
+.teacherUsersTable{
+    width: 1040px;
+    border-collapse: collapse;
+    text-align: center;
+}
+.teacherUsersTable tr{
+    height: 35px;
+}
+.teacherUsersTable tr th{
+    text-align: center;
+}
+.operation-button{
+    padding: 2px 15px;
+    border-radius: 5px;
+    border: 1px solid #080808;
+    color: #000000;
+    margin-right: 10px
+}
+.operation-button:hover{
+    background-color: #080808;
+    color: #c0c0c0;
+}

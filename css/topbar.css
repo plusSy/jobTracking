@@ -1,0 +1,23 @@
+.topbar-main{
+    width: 100%;
+    border-bottom: 1px solid #080808;
+    overflow: hidden;
+}
+.topbar{
+    width: 230px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #1c2b36;
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+}
+.topbar-logo{
+    width: 30px;
+    height: 30px;
+    margin:-8px 10px 0 20px;
+}
+.topbar-title{
+    color: #c3d0d9;
+    font-size: 18px;
+}

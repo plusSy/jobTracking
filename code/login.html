@@ -1,0 +1,16 @@
+<div class="login-page">
+    <div class="login-img">
+        <img src="image/login-bg2.jpg" alt="">
+    </div>
+    <div class="login-content">
+        <div class="userName">
+            <input type="text" class="login-input" placeholder="请输入登录名" ng-model="user.userName">
+        </div>
+        <div class="password">
+            <input type="password" class="login-input" placeholder="只能是数字、字母、下划线" ng-model="user.password">
+        </div>
+        <div class="login">
+            <button class="btn btn-primary" ng-click="login(user)">登录</button>
+        </div>
+    </div>
+</div>

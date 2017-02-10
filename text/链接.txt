@@ -1,0 +1,60 @@
+销售额同比增长率
+http://139.196.52.214/views/_2/sheet0?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no
+
+<script type='text/javascript' src='http://139.196.52.214/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1353px; height: 551px;'><object class='tableauViz' width='1353' height='551' style='display:none;'><param name='host_url' value='http%3A%2F%2F139.196.52.214%2F' /> <param name='site_root' value='' /><param name='name' value='_2&#47;sheet0' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param 
+name='showShareOptions' value='true' /></object></div>
+
+
+销售量同比增长率
+http://139.196.52.214/views/_2/sheet1?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no
+
+<script type='text/javascript' src='http://139.196.52.214/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1353px; height: 551px;'><object class='tableauViz' width='1353' height='551' style='display:none;'><param name='host_url' value='http%3A%2F%2F139.196.52.214%2F' /> <param name='site_root' value='' /><param name='name' value='_2&#47;sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showShareOptions' value='true' /></object></div>
+
+
+
+品类总体销售额同比增长率
+http://139.196.52.214/views/_2/sheet2?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no
+
+<script type='text/javascript' src='http://139.196.52.214/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1353px; height: 551px;'><object class='tableauViz' width='1353' height='551' style='display:none;'><param name='host_url' value='http%3A%2F%2F139.196.52.214%2F' /> <param name='site_root' value='' /><param name='name' value='_2&#47;sheet2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showShareOptions' value='true' /></object></div>
+
+
+
+不同品牌线上线下金额所占市场份额
+http://139.196.52.214/views/_2/sheet3?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no
+<script type='text/javascript' src='http://139.196.52.214/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1353px; height: 551px;'><object class='tableauViz' width='1353' height='551' style='display:none;'><param name='host_url' value='http%3A%2F%2F139.196.52.214%2F' /> <param name='site_root' value='' /><param name='name' value='_2&#47;sheet3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showShareOptions' value='true' /></object></div>
+
+
+地区地图
+http://139.196.52.214/views/_2/sheet4?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no
+
+<script type='text/javascript' src='http://139.196.52.214/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1353px; height: 551px;'><object class='tableauViz' width='1353' height='551' style='display:none;'><param name='host_url' value='http%3A%2F%2F139.196.52.214%2F' /> <param name='site_root' value='' /><param name='name' value='_2&#47;sheet4' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showShareOptions' value='true' /></object></div>
+
+
+不同省份销售量汇总
+http://139.196.52.214/views/_2/sheet5?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no
+
+<script type='text/javascript' src='http://139.196.52.214/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1353px; height: 551px;'><object class='tableauViz' width='1353' height='551' style='display:none;'><param name='host_url' value='http%3A%2F%2F139.196.52.214%2F' /> <param name='site_root' value='' /><param name='name' value='_2&#47;sheet5' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showShareOptions' value='true' /></object></div>
+
+
+月订单满足率
+http://139.196.52.214/views/_2/sheet6?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no
+
+<script type='text/javascript' src='http://139.196.52.214/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1353px; height: 551px;'><object class='tableauViz' width='1353' height='551' style='display:none;'><param name='host_url' value='http%3A%2F%2F139.196.52.214%2F' /> <param name='site_root' value='' /><param name='name' value='_2&#47;sheet6' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showShareOptions' value='true' /></object></div>
+
+
+
+品类渠道份额及同比增长率
+http://139.196.52.214/views/_2/sheet7?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no
+
+<script type='text/javascript' src='http://139.196.52.214/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1353px; height: 551px;'><object class='tableauViz' width='1353' height='551' style='display:none;'><param name='host_url' value='http%3A%2F%2F139.196.52.214%2F' /> <param name='site_root' value='' /><param name='name' value='_2&#47;sheet7' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showShareOptions' value='true' /></object></div>
+
+
+
+热力图
+http://139.196.52.214/views/_2/sheet8?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no
+
+<script type='text/javascript' src='http://139.196.52.214/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1353px; height: 551px;'><object class='tableauViz' width='1353' height='551' style='display:none;'><param name='host_url' value='http%3A%2F%2F139.196.52.214%2F' /> <param name='site_root' value='' /><param name='name' value='_2&#47;sheet8' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showShareOptions' value='true' /></object></div>
+
+
+
+

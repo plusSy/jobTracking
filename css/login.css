@@ -1,0 +1,30 @@
+.login-page{
+    padding-top: 240px;
+}
+.login-img{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+    z-index: -999;
+}
+.login-content{
+    width: 400px;
+    margin: 0 auto;
+}
+.login-input{
+    border: none;
+    padding-left: 20px;
+    border-radius: 30px ;
+    height: 50px;
+    width: 400px;
+    margin-bottom: 40px;
+}
+.login button{
+    width: 400px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+}
