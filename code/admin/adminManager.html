@@ -38,54 +38,28 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr ng-repeat="details in allTeacher">
                     <td>
                         <input type="checkbox">
-                        1
+                        {{$index+1}}
                     </td>
                     <td>
-                        石一龙
+                        <span ng-bind="details.name"></span>
                     </td>
                     <td>
-                        信息学院
+                        <span ng-bind="details.unit"></span>
                     </td>
                     <td>
-                        书记
+                        <span ng-bind="details.position"></span>
                     </td>
                     <td>
-                        2017年2月10日
+                       <span ng-bind="details.regDate"></span>
                     </td>
                     <td>
                         <div class="operation-teacherUsers">
                             <button class="operation-button" ng-click="cheangePassword()">修改密码</button>
                             <button class="operation-button" ng-click="seeTeacherDetails()">查看信息</button>
                             <button class="operation-button" ng-click="removerTeacher()">删除</button>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type="checkbox">
-                        10000
-                    </td>
-                    <td>
-                        石一龙
-                    </td>
-                    <td>
-                        信息学院
-                    </td>
-                    <td>
-                        专职辅导员
-                    </td>
-                    <td>
-                        2017年2月10日
-                    </td>
-                    <td>
-                        <div class="operation-teacherUsers">
-                            <button class="operation-button">修改密码</button>
-                            <button class="operation-button">查看信息</button>
-                            <button class="operation-button">删除</button>
                         </div>
                     </td>
                 </tr>

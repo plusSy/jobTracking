@@ -3,6 +3,23 @@
  */
 App.controller('adminCtrl',function($scope,$stateParams,ngDialog){
 
+    //查看所有教师
+    $scope.allTeacher = [{
+        name : '王虎威',
+        unit : '信息学院',
+        position : '党支部书记',
+        regDate : '2017年2月12日'
+    },{
+        name : '刘赟',
+        unit : '信息学院',
+        position : '党支部副书记',
+        regDate : '2017年2月12日'
+    },{
+        name : '田力雄',
+        unit : '信息学院',
+        position : '专职辅导员',
+        regDate : '2017年2月12日'
+    }];
 
     //添加教师
     $scope.addTeacher = function(){
@@ -38,18 +55,49 @@ App.controller('adminCtrl',function($scope,$stateParams,ngDialog){
         })
     };
 
-    //查看信息
+    //查看个人教师信息
     $scope.seeTeacherDetails = function(){
         ngDialog.open({
-            width: 600,
+            width: 1020,
             template: 'code/admin/seeTeacherDetails.html',
             className: 'ngdialog-theme-default',
+            showClose: false,
             closeByDocument : false,
             closeByEscape : false,
             controller: function($scope) {
                 $scope.closeThisDialog = function() {
                     ngDialog.close(); //关闭弹窗
                 };
+                $scope.personDetails = [{
+                    image:'image/person.jpg',
+                    name : '田力雄',
+                    gender : '男',
+                    unit : '信息学院',
+                    position : '专职辅导员',
+                    phone : '18435109660',
+                    email : '792381585@qq.com',
+                    address : '山西省安泽县第五村',
+                    clazz : [{
+                        clazzId : '1',
+                        clazzName : '13电子G1班'
+                    },{
+                        clazzId : '2',
+                        clazzName : '13电子G2班'
+                    },{
+                        clazzId : '3',
+                        clazzName : '13通信G1班'
+                    },{
+                        clazzId : '4',
+                        clazzName : '13通信G2班'
+                    },{
+                        clazzId : '5',
+                        clazzName : '13软件G3班'
+                    },{
+                        clazzId : '6',
+                        clazzName : '13计科D班'
+                    }],
+                    intro : '这是一个十分敬业的老师'
+                }];
             }
         })
     };
