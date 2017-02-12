@@ -1,10 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<style>
+    .addTeachers{
+        width: 380px;
+    }
+    .addTeacher-top{
+        overflow: hidden;
+    }
+    .addTeacher-topics{
+        float: left;
+        font-size: 20px;
+        border-bottom:1px dashed #080808;
+        margin-left: 20px;
+    }
+    .close-icno{
+        float: right;
+        cursor: pointer;
+    }
+    .addTeacher-content{
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .message{
+        overflow: hidden;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .message-flag{
+        float: left;
+    }
+    .message-details{
+        float: left;
+    }
+    .message-details>input{
+        width: 240px;
+        height: 27px;
+        padding-left: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #080808;
+    }
+    .addTeacher-buttons{
+        width: 380px;
+        margin-top: 30px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .add-button{
+        width: 70px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid #080808;
+        background-color: #c0c0c0;
+    }
+    .add-button:hover{
+        color: #c0c0c0;
+        background-color: #080808;
+    }
+    .add-cancel{
+        margin-left: 35px;
+    }
+</style>
+<div class="addTeachers">
+    <div class="addTeacher-top">
+        <div class="addTeacher-topics">添加教师</div>
+        <div class="close-icno">
+            <i class="glyphicon glyphicon-remove" ng-click="closeThisDialog()"></i>
+        </div>
+    </div>
+    <div class="addTeacher-content">
+        <div class="message">
+            <div class="message-flag">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</div>
+            <div class="message-details">
+                <input type="text">
+            </div>
+        </div>
+        <div class="message">
+            <div class="message-flag">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务：</div>
+            <div class="message-details">
+                <input type="text">
+            </div>
+        </div>
+        <div class="message">
+            <div class="message-flag">所属院系：</div>
+            <div class="message-details">
+                <input type="text">
+            </div>
+        </div>
+        <div class="message">
+            <div class="message-flag">初始密码：</div>
+            <div class="message-details">
+                <input type="text">
+            </div>
+        </div>
+    </div>
+    <div class="addTeacher-buttons">
+        <button class="add-sure add-button">确定</button>
+        <button class="add-cancel add-button" ng-click="closeThisDialog()">取消</button>
+    </div>
+</div>

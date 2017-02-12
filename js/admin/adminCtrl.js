@@ -7,9 +7,10 @@ App.controller('adminCtrl',function($scope,$stateParams,ngDialog){
     //添加教师
     $scope.addTeacher = function(){
         ngDialog.open({
-            width: 600,
+            width: 410,
             template: 'code/admin/addTeacher.html',
             className: 'ngdialog-theme-default',
+            showClose: false,
             closeByDocument : false,
             closeByEscape : false,
             controller: function($scope) {
