@@ -1,7 +1,11 @@
 /**
+ * adminCtrl  管理端
  * Created by applesyl on 2017/2/10.
  */
-App.controller('adminCtrl',function($scope,$stateParams,ngDialog){
+App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog){
+
+    //设置导航选中项
+    $rootScope.clickThisNav = 'ls6';
 
     //查看所有教师
     $scope.allTeacher = [{

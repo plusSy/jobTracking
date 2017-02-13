@@ -4,7 +4,7 @@
 }
 .homeContainerList{
     width: 230px;
-    height: 600px;
+    height: 640px;
     background-color: #1c2b36 ;
     color: #869fb1;
     float: left;
@@ -25,7 +25,6 @@
 .chartCon{
     width: 1170px;
     margin-left: 230px;
-    margin-bottom: 80px;
     overflow: hidden;
 }
 .bottom{
@@ -35,4 +34,8 @@
     line-height: 50px;
     text-align: center;
     margin-left: 230px;
+}
+.clickThisNav{
+    background-color: #c3d0d9;
+    color: #1c2b36;
 }

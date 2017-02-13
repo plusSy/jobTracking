@@ -1,2 +1,99 @@
-<h1>perfectInformation.html</h1>
-<h2>{{name}}</h2>
+<div class="perfectInformation">
+    <div class="teacherInformationTop">
+        <div class="teacherInformation-Tips">
+            <i class="glyphicon glyphicon-user"></i>
+            <span>教师用户完善个人信息</span>
+        </div>
+    </div>
+
+
+    <div class="seeTeacherDetails-content">
+        <div class="teacherDetails-img" ng-if="!infor.image">
+            <img src="image/person.jpg" alt="{{infor.name}}">
+            <div class="teacherDetails-img-tips">
+                <span>该教师还没有照片</span>
+            </div>
+        </div>
+        <div class="teacherDetails-img" ng-if="infor.image">
+            <img src="{{infor.image}}" alt="{{infor.name}}">
+            <!--<div class="teacherDetails-img-tips">-->
+            <!--<span></span>-->
+            <!--</div>-->
+        </div>
+        <div class="teacherDetails-content">
+            <div class="teacherDetails-row">
+                <div class="teacherDetails-colLeft">
+                    <div class="teacherDetails-flag">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</div>
+                    <div class="teacherDetails-con">
+                        <input class="teacherDetails-con-text" type="text">
+                    </div>
+                </div>
+                <div class="teacherDetails-colRight">
+                    <div class="teacherDetails-flag">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:</div>
+                    <div class="teacherDetails-con">
+                        <input name="gender" type="radio">
+                        <span class="teacherDetails-con-radio">男</span>
+                        <input name="gender" type="radio">
+                        <span class="teacherDetails-con-radio">女</span>
+                    </div>
+                </div>
+            </div>
+            <div class="teacherDetails-row">
+                <div class="teacherDetails-colLeft">
+                    <div class="teacherDetails-flag">所在院系:</div>
+                    <div class="teacherDetails-con">
+                        <input class="teacherDetails-con-text" type="text">
+                    </div>
+                </div>
+                <div class="teacherDetails-colRight">
+                    <div class="teacherDetails-flag">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务:</div>
+                    <div class="teacherDetails-con">
+                        <input class="teacherDetails-con-text" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="teacherDetails-row">
+                <div class="teacherDetails-colLeft">
+                    <div class="teacherDetails-flag">联系电话:</div>
+                    <div class="teacherDetails-con">
+                        <input class="teacherDetails-con-text" type="number">
+                    </div>
+                </div>
+                <div class="teacherDetails-colRight">
+                    <div class="teacherDetails-flag">工作邮箱:</div>
+                    <div class="teacherDetails-con">
+                        <input class="teacherDetails-con-text" type="email">
+                    </div>
+                </div>
+            </div>
+            <div class="teacherDetails-row">
+                <div class="teacherDetails-colLeft">
+                    <div class="teacherDetails-flag">所带班级:</div>
+                    <div class="teacherDetails-con">
+                        <select class="teacherDetails-con-select">
+                            <!--<option ng-repeat="clazz in infor.clazz" ng-bind="clazz.clazzName"></option>-->
+                            <option value="">13软件G3班</option>
+                            <option value="">12软件G3班</option>
+                            <option value="">11软件G3班</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="teacherDetails-colRight">
+                    <div class="teacherDetails-flag">家庭住址:</div>
+                    <div class="teacherDetails-con">
+                        <input class="teacherDetails-con-text" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="teacherDetails-row">
+                <div class="teacherDetails-flag">个人简介:</div>
+                <textarea class="teacherDetails-con teacherDetails-area"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="teacherInformation-buttom">
+        <button class="saveTheChange">保存</button>
+    </div>
+
+</div>
