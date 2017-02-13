@@ -75,6 +75,12 @@
         border-radius: 5px;
         padding-left: 10px;
     }
+    .teacherDetails-con-options{
+        width: 209px;
+        background-color: #f0f0f0;
+        height: 40px;
+        border: none;
+    }
     .teacherDetails-area{
         width: 555px;
         height: 170px;
@@ -114,8 +120,8 @@
             </div>
             <div class="teacherDetails-row">
                 <div class="teacherDetails-colLeft">
-                    <div class="teacherDetails-flag">所在院系:</div>
-                    <div class="teacherDetails-con" ng-bind="infor.unit"></div>
+                    <div class="teacherDetails-flag">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</div>
+                    <div class="teacherDetails-con" ng-bind="infor.jobNumber"></div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务:</div>
@@ -136,7 +142,7 @@
                 <div class="teacherDetails-colLeft">
                     <div class="teacherDetails-flag">所带班级:</div>
                     <div class="teacherDetails-con">
-                        <select>
+                        <select class="teacherDetails-con-options">
                             <option ng-repeat="clazz in infor.clazz" ng-bind="clazz.clazzName"></option>
                         </select>
                     </div>

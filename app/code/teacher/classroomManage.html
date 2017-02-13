@@ -1,0 +1,75 @@
+<div class="classroomManage">
+    <div class="studentUsers-top">
+        <div class="studentUsersTitle">
+            <i class="glyphicon glyphicon-user"></i>
+            <span>班级信息列表</span>
+        </div>
+        <div class="addStudentUser">
+            <button class="addStudent" ng-click="addStudent()">添加学生</button>
+        </div>
+        <div class="header-menu">
+            <input type="text" class="menu-search" placeholder="请输入关键字">
+            <i class="glyphicon glyphicon-search menu-search-icno"></i>
+        </div>
+    </div>
+    <div class="studentUsersTable">
+        <table border="1" class="teacherUsersTable">
+            <thead>
+            <tr>
+                <th style="width: 91px;">
+                    <input type="checkbox">
+                    <span class="table-title">全选</span>
+                </th>
+                <th style="width: 140px">
+                    <span class="table-title">学号</span>
+                </th>
+                <th style="width: 115px;">
+                    <span class="table-title">姓名</span>
+                </th>
+                <th style="width: 145px;">
+                    <span class="table-title">注册时间</span>
+                </th>
+                <th style="width: 108px;">
+                    <span class="table-title">是否就业</span>
+                </th>
+                <th style="width: 400px;">
+                    <span class="table-title">操作</span>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                    {{$index+1}}
+                </td>
+                <td>
+                    <!--<span ng-bind="details.name"></span>-->
+                    <span>20113330321</span>
+                </td>
+                <td>
+                    <!--<span ng-bind="details.unit"></span>-->
+                    <span>石一龙</span>
+                </td>
+                <td>
+                    <!--<span ng-bind="details.position"></span>-->
+                    <span>2013年9月</span>
+                </td>
+                <td>
+                    <!--<span ng-bind="details.regDate"></span>-->
+                    <span>是</span>
+                </td>
+                <td>
+                    <div class="operation-teacherUsers">
+                        <button class="operation-button" ng-click="cheangePassword()">修改密码</button>
+                        <button class="operation-button" ng-click="seeStudentDetails()">查看信息</button>
+                        <button class="operation-button" ng-click="removerTeacher()">删除</button>
+                        <button class="operation-button" ng-click="removerTeacher()">展示推荐</button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="studentUsersBottom"></div>
+</div>

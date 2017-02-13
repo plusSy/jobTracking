@@ -1,2 +1,15 @@
-<h1>manageClassroom.html</h1>
-<h2>{{name}}</h2>
+<div class="manageClassroom">
+    <div class="manageClassroom-left">
+        <div class="brought-class">
+            所带班级
+        </div>
+        <div class="classroom-list">
+            <ul>
+                <li ui-sref="index.manageClassroom.classroomManage">13软件G3班</li>
+                <li>13软件G3班</li>
+                <li>13软件G3班</li>
+            </ul>
+        </div>
+    </div>
+    <div class="manageClassroom-right" ui-view="classroom"></div>
+</div>

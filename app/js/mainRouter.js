@@ -92,7 +92,22 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["js/teacher/manageClassroomCtrl.js"]);
+                        return $ocLazyLoad.load(["css/manageClassroom.css","js/teacher/manageClassroomCtrl.js"]);
+                    }]
+                }
+            })
+            //班级管理信息
+            .state("index.manageClassroom.classroomManage",{
+                url : "^/classroomManage",
+                views : {
+                    "classroom@index.manageClassroom" : {
+                        templateUrl : 'code/teacher/classroomManage.html',
+                        controller : 'classroomManageCtrl'
+                    }
+                },
+                resolve:{
+                    deps:["$ocLazyLoad",function($ocLazyLoad){
+                        return $ocLazyLoad.load(["css/classroomManage.css","js/teacher/classroomManageCtrl.js"]);
                     }]
                 }
             })

@@ -1,35 +1,14 @@
 /**
- * adminCtrl  管理端
- * Created by applesyl on 2017/2/10.
+ * classroomManageCtrl 班级信息
+ * Created by applesyl on 2017/2/13.
  */
-App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog){
-
-    //设置导航选中项
-    $rootScope.clickThisNav = 'ls6';
-
-    //查看所有教师
-    $scope.allTeacher = [{
-        name : '王虎威',
-        jobNumber : '1001',
-        position : '党支部书记',
-        regDate : '2017年2月12日'
-    },{
-        name : '刘赟',
-        jobNumber : '1002',
-        position : '党支部副书记',
-        regDate : '2017年2月12日'
-    },{
-        name : '田力雄',
-        jobNumber : '1003',
-        position : '专职辅导员',
-        regDate : '2017年2月12日'
-    }];
+App.controller('classroomManageCtrl',function($scope,$rootScope,$stateParams,ngDialog){
 
     //添加教师
-    $scope.addTeacher = function(){
+    $scope.addStudent = function(){
         ngDialog.open({
             width: 410,
-            template: 'code/admin/addTeacher.html',
+            template: 'code/teacher/addStudent.html',
             className: 'ngdialog-theme-default',
             showClose: false,
             closeByDocument : false,
@@ -59,8 +38,8 @@ App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog){
         })
     };
 
-    //查看个人教师信息
-    $scope.seeTeacherDetails = function(){
+    //查看学生个人信息
+    $scope.seeStudentDetails = function(){
         ngDialog.open({
             width: 1020,
             template: 'code/admin/seeTeacherDetails.html',
@@ -105,6 +84,7 @@ App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog){
             }
         })
     };
+
 
     //删除
     $scope.removerTeacher = function(){

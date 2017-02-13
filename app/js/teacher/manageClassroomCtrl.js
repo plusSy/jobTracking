@@ -6,6 +6,4 @@ App.controller('manageClassroomCtrl',function($scope,$rootScope,$stateParams){
 
     //设置导航选中项
     $rootScope.clickThisNav = 'ls5';
-
-    $scope.name = 'manageClassroomCtrl';
 });
