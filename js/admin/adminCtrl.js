@@ -76,7 +76,7 @@ App.controller('adminCtrl',function($scope,$stateParams,ngDialog){
                     position : '专职辅导员',
                     phone : '18435109660',
                     email : '792381585@qq.com',
-                    address : '山西省安泽县第五村',
+                    address : '山西省太原市小店区',
                     clazz : [{
                         clazzId : '1',
                         clazzName : '13电子G1班'

@@ -136,10 +136,9 @@
                 <div class="teacherDetails-colLeft">
                     <div class="teacherDetails-flag">所带班级:</div>
                     <div class="teacherDetails-con">
-                        13软件G3班
-                        <!--<select ng-options="clazz in infor.clazz">-->
-                            <!--<option ng-bind="clazz.clazzName"></option>-->
-                        <!--</select>-->
+                        <select>
+                            <option ng-repeat="clazz in infor.clazz" ng-bind="clazz.clazzName"></option>
+                        </select>
                     </div>
                 </div>
                 <div class="teacherDetails-colRight">
