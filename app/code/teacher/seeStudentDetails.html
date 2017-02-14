@@ -1,0 +1,161 @@
+<style>
+    .seeTeacherDetails{
+
+    }
+    .seeTeacherDetails-top{
+        margin: 10px;
+    }
+    .seeTeacherDetails-title{
+        font-size:20px;
+        border-bottom: 1px dashed #080808;
+        float: left;
+    }
+    .close-icno{
+        float: right;
+        cursor: pointer;
+    }
+    .seeTeacherDetails-content{
+        width: 980px;
+        height: 500px;
+        overflow: hidden;
+        padding: 30px;
+    }
+    .teacherDetails-img{
+        width: 250px;
+        float: left;
+        position: relative;
+    }
+    .teacherDetails-img img{
+        max-height: 250px;
+        max-width: 250px;
+    }
+    .teacherDetails-img-tips{
+        height: 40px;
+        width: 250px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        padding-top: 8px;
+        position: absolute;
+        bottom: 0;
+        opacity: 0.8;
+    }
+    .teacherDetails-content{
+        width: 640px;
+        float: right;
+        height: 400px;
+    }
+    .teacherDetails-row{
+        height: 40px;
+        width: 640px;
+        margin-bottom: 25px;
+    }
+    .teacherDetails-colLeft{
+        width: 315px;
+        height: 40px;
+        line-height: 40px;
+        float: left;
+    }
+    .teacherDetails-colRight{
+        width: 315px;
+        height: 40px;
+        line-height: 40px;
+        float: right;
+    }
+    .teacherDetails-flag{
+        float: left;
+        width: 70px;
+    }
+    .teacherDetails-con{
+        float: left;
+        width: 230px;
+        margin-left: 15px;
+        border: 1px solid #080808;
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+    .teacherDetails-con-options{
+        width: 209px;
+        background-color: #f0f0f0;
+        height: 40px;
+        border: none;
+    }
+    .teacherDetails-area{
+        width: 555px;
+        height: 170px;
+        overflow: hidden;
+    }
+</style>
+<div class="seeTeacherDetails">
+    <div class="seeTeacherDetails-top">
+        <div class="seeTeacherDetails-title">学生详细信息</div>
+        <div class="close-icno">
+            <i class="glyphicon glyphicon-remove" ng-click="closeThisDialog()"></i>
+        </div>
+    </div>
+    <div class="seeTeacherDetails-content" ng-repeat="infor in personDetails">
+        <div class="teacherDetails-img" ng-if="!infor.image">
+            <img src="image/person.jpg" alt="{{infor.name}}">
+            <div class="teacherDetails-img-tips">
+                <span>该教师还没有照片</span>
+            </div>
+        </div>
+        <div class="teacherDetails-img" ng-if="infor.image">
+            <img src="{{infor.image}}" alt="{{infor.name}}">
+            <!--<div class="teacherDetails-img-tips">-->
+                <!--<span></span>-->
+            <!--</div>-->
+        </div>
+        <div class="teacherDetails-content">
+            <div class="teacherDetails-row">
+                <div class="teacherDetails-colLeft">
+                    <div class="teacherDetails-flag">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</div>
+                    <div class="teacherDetails-con" ng-bind="infor.name"></div>
+                </div>
+                <div class="teacherDetails-colRight">
+                    <div class="teacherDetails-flag">所属专业:</div>
+                    <div class="teacherDetails-con" ng-bind="infor.specialty"></div>
+                </div>
+            </div>
+            <div class="teacherDetails-row">
+                <div class="teacherDetails-colLeft">
+                    <div class="teacherDetails-flag">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</div>
+                    <div class="teacherDetails-con" ng-bind="infor.studentNumber"></div>
+                </div>
+                <div class="teacherDetails-colRight">
+                    <div class="teacherDetails-flag">是否就业:</div>
+                    <div class="teacherDetails-con" ng-bind="infor.job"></div>
+                </div>
+            </div>
+            <div class="teacherDetails-row">
+                <div class="teacherDetails-colLeft">
+                    <div class="teacherDetails-flag">联系电话:</div>
+                    <div class="teacherDetails-con" ng-bind="infor.phone"></div>
+                </div>
+                <div class="teacherDetails-colRight">
+                    <div class="teacherDetails-flag">工作邮箱:</div>
+                    <div class="teacherDetails-con" ng-bind="infor.email"></div>
+                </div>
+            </div>
+            <div class="teacherDetails-row">
+                <div class="teacherDetails-colLeft">
+                    <div class="teacherDetails-flag">就业详情:</div>
+                    <div class="teacherDetails-con">
+                        <select class="teacherDetails-con-options">
+                            <option ng-repeat="clazz in infor.clazz" ng-bind="clazz.clazzName"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="teacherDetails-colRight">
+                    <div class="teacherDetails-flag">家庭住址:</div>
+                    <div class="teacherDetails-con" ng-bind="infor.address"></div>
+                </div>
+            </div>
+            <div class="teacherDetails-row">
+                <div class="teacherDetails-flag">个人简介:</div>
+                <div class="teacherDetails-con teacherDetails-area" ng-bind="infor.intro"></div>
+            </div>
+        </div>
+    </div>
+</div>

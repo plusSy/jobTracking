@@ -42,7 +42,7 @@ App.controller('classroomManageCtrl',function($scope,$rootScope,$stateParams,ngD
     $scope.seeStudentDetails = function(){
         ngDialog.open({
             width: 1020,
-            template: 'code/admin/seeTeacherDetails.html',
+            template: 'code/teacher/seeStudentDetails.html',
             className: 'ngdialog-theme-default',
             showClose: false,
             closeByDocument : false,
@@ -53,16 +53,16 @@ App.controller('classroomManageCtrl',function($scope,$rootScope,$stateParams,ngD
                 };
                 $scope.personDetails = [{
                     image:'image/person.jpg',
-                    name : '田力雄',
-                    gender : '男',
-                    jobNumber : '1003',
-                    position : '专职辅导员',
+                    name : '石一龙',
+                    specialty : '软件工程',
+                    studentNumber : '2013330321',
+                    job : '是',
                     phone : '18435109660',
                     email : '792381585@qq.com',
                     address : '山西省太原市小店区',
                     clazz : [{
                         clazzId : '1',
-                        clazzName : '13电子G1班'
+                        clazzName : '2013年10月至2014年2月就职于************单位，任软件开发工程师'
                     },{
                         clazzId : '2',
                         clazzName : '13电子G2班'
@@ -102,4 +102,21 @@ App.controller('classroomManageCtrl',function($scope,$rootScope,$stateParams,ngD
             }
         })
     };
+
+    //展示推荐
+    $scope.exhibition = function(){
+        ngDialog.open({
+            width: 360,
+            template: 'code/teacher/exhibition.html',
+            className: 'ngdialog-theme-default',
+            showClose : false,
+            closeByDocument : false,
+            closeByEscape : false,
+            controller: function($scope) {
+                $scope.closeThisDialog = function() {
+                    ngDialog.close(); //关闭弹窗
+                };
+            }
+        })
+    }
 });
