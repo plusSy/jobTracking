@@ -1,0 +1,52 @@
+/*个人工作信息 jobInformation.css*/
+.jobInformation{
+    width: 1040px;
+    margin: 0 auto;
+    height: 640px;
+}
+.jobInformation-top{
+    width: 100%;
+    overflow: hidden;
+}
+.jobInformation-Tips{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+}
+.add-jobInformation{
+    float: right;
+}
+.add-jobInformation-button{
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #080808;
+    color: #000000;
+}
+.add-jobInformation-button:hover{
+    background-color: #080808;
+    color: #c0c0c0;
+}
+.jobInformation-table{
+    width: 1040px;
+    border-collapse: collapse;
+    text-align: center;
+}
+.jobInformationTable tr{
+    height: 35px;
+}
+.jobInformationTable tr th{
+    text-align: center;
+}
+.operation-button{
+    padding: 2px 15px;
+    border-radius: 5px;
+    border: 1px solid #080808;
+    color: #000000;
+    margin-right: 10px
+}
+.operation-button:hover{
+    background-color: #080808;
+    color: #c0c0c0;
+}

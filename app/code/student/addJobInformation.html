@@ -1,0 +1,165 @@
+<div class="addJobInformation">
+    <div class="addJobInformation-top">
+        <div class="addJobInformation-tips">
+            <i class="glyphicon glyphicon-user"></i>
+            <span>新增个人工作信息</span>
+        </div>
+        <div class="backToJobInformation">
+            <button class="backToJobInformation-button" ui-sref="index.jobInformation">返回</button>
+        </div>
+    </div>
+    <!--就业单位名称-->
+    <div class="addJobInformation-details">
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                就业单位名称:
+            </div>
+            <div class="addJobInformation-content">
+                <input class="addJobInformation-content-text" type="text" placeholder="请输入公司名称">
+            </div>
+        </div>
+        <!--公司性质-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+               公司性质:
+            </div>
+            <div class="addJobInformation-content">
+                <select class="addJobInformation-content-select">
+                    <option value="">政府机关</option>
+                    <option value="">IT</option>
+                </select>
+            </div>
+        </div>
+        <!--行业类别-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                行业类别:
+            </div>
+            <div class="addJobInformation-content">
+                <select class="addJobInformation-content-select">
+                    <option value="">IT|通信|电子|互联网</option>
+                    <option value="">金融业</option>
+                    <option value="">房地产|建筑业</option>
+                </select>
+            </div>
+        </div>
+        <!--从属行业-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                从属行业:
+            </div>
+            <div class="addJobInformation-content">
+                <select class="addJobInformation-content-select">
+                    <option value="">互联网／电子商务</option>
+                    <option value="">计算机软件</option>
+                    <option value="">IT服务(系统／数据／维护)</option>
+                </select>
+            </div>
+        </div>
+        <!--职位类别-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                职位类别:
+            </div>
+            <div class="addJobInformation-content">
+                <select class="addJobInformation-content-select">
+                    <option value="">销售|客服|市场</option>
+                    <option value="">财务|人力资源|行政</option>
+                    <option value="">项目|质量|高级管理</option>
+                </select>
+            </div>
+        </div>
+        <!--从属职位-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                从属职位:
+            </div>
+            <div class="addJobInformation-content">
+                <select class="addJobInformation-content-select">
+                    <option value="">销售业务</option>
+                    <option value="">销售管理</option>
+                    <option value="">销售行政／服务</option>
+                </select>
+            </div>
+        </div>
+        <!--工作城市-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                工作城市:
+            </div>
+            <div class="addJobInformation-content">
+                <input class="addJobInformation-content-text" type="text" placeholder="请输入公司所在城市名称">
+            </div>
+        </div>
+        <!--月薪-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                月薪:
+            </div>
+            <div class="addJobInformation-content">
+                <input name="salary" type="radio">1000以下
+                <input name="salary" type="radio">1000--3000
+                <input name="salary" type="radio">3000--5000
+                <input name="salary" type="radio">5000--8000
+                <input name="salary" type="radio">8000以上
+            </div>
+        </div>
+        <!--就业信息获取渠道-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                就业信息获取渠道:
+            </div>
+            <div class="addJobInformation-content">
+                <select class="addJobInformation-content-select">
+                    <option value="">学校校园网</option>
+                    <option value="">校园招聘会</option>
+                    <option value="">新闻媒体</option>
+                    <option value="">人才介绍机构</option>
+                    <option value="">社会其他招聘网站</option>
+                    <option value="">亲友介绍</option>
+                </select>
+            </div>
+        </div>
+        <!--起始工作年份-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                起始工作年份:
+            </div>
+            <div class="addJobInformation-content">
+
+            </div>
+        </div>
+        <!--职位-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                职位:
+            </div>
+            <div class="addJobInformation-content">
+                <select class="addJobInformation-content-select">
+                    <option value="">软件工程师</option>
+                    <option value="">前端工程师</option>
+                    <option value="">java开发工程师</option>
+                    <option value="">项目总监</option>
+                    <option value="">软件测试员</option>
+                    <option value="">领导</option>
+                </select>
+            </div>
+        </div>
+        <!--备注-->
+        <div class="addJobInformation-row-textarea">
+            <div class="addJobInformation-flag-textarea">
+                备注:
+            </div>
+            <div class="addJobInformation-content-area">
+                <textarea class="addJobInformation-content-textarea"></textarea>
+            </div>
+        </div>
+        <!--保存   取消-->
+        <div class="addJobInformation-row-button">
+            <div class="">
+                <button class="addJobInformation-content-button addJobInformation-save" ng-click="addJobInformation()">保存</button>
+                <button class="addJobInformation-content-button addJobInformation-cancel" ui-sref="index.jobInformation">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

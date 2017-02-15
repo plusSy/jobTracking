@@ -1,2 +1,66 @@
-<h1>jobInformation.html</h1>
-<h2>{{name}}</h2>
+<div class="jobInformation">
+    <div class="jobInformation-top">
+        <div class="jobInformation-Tips">
+            <i class="glyphicon glyphicon-user"></i>
+            <span>完善个人工作信息</span>
+        </div>
+        <div class="add-jobInformation">
+            <button class="add-jobInformation-button" ui-sref="index.addJobInformation">新增就业信息</button>
+        </div>
+    </div>
+
+    <div class="jobInformation-table">
+        <table border="1" class="jobInformationTable">
+            <thead>
+            <tr>
+                <th style="width: 91px;">
+                    <input type="checkbox">
+                    <span class="table-title">全选</span>
+                </th>
+                <th style="width: 87px">
+                    <span class="table-title">姓名</span>
+                </th>
+                <th style="width: 115px;">
+                    <span class="table-title">专业</span>
+                </th>
+                <th style="width: 145px;">
+                    <span class="table-title">政治面貌</span>
+                </th>
+                <th style="width: 200px;">
+                    <span class="table-title">行业类别</span>
+                </th>
+                <th style="width: 400px;">
+                    <span class="table-title">操作</span>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                    1
+                </td>
+                <td>
+                    <span>石一龙</span>
+                </td>
+                <td>
+                    <span>软件工程</span>
+                </td>
+                <td>
+                    <span>中共党员</span>
+                </td>
+                <td>
+                    <span>软件开发</span>
+                </td>
+                <td>
+                    <div class="operation-teacherUsers">
+                        <button class="operation-button" ui-sref="index.addJobInformation({jobId:1})">查看</button>
+                        <button class="operation-button" ui-sref="index.addJobInformation({jobId:1})">编辑</button>
+                        <button class="operation-button" ng-click="removerJobInformation()">删除</button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

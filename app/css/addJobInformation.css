@@ -1,0 +1,118 @@
+/*addJobInformation.css  新增添加就业信息*/
+.addJobInformation{
+    width: 1040px;
+    margin: 0 auto;
+}
+.addJobInformation-top{
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #080808;
+}
+.addJobInformation-tips{
+    height: 60px;
+    line-height: 60px;
+    float: left;
+}
+.backToJobInformation{
+    float: right;
+}
+.backToJobInformation-button{
+    width: 100px;
+    height: 35px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid #080808;
+    color: #000000;
+}
+.backToJobInformation-button:hover{
+    color: #c0c0c0;
+    background-color: #080808;
+}
+.addJobInformation-row{
+    width: 1040px;
+    height: 40px;
+    line-height: 40px;
+    overflow: auto;
+    margin: 10px 0;
+}
+.addJobInformation-flag{
+    width: 250px;
+    height: 40px;
+    text-align: right;
+    float: left;
+}
+.addJobInformation-content{
+    width: 760px;
+    height: 40px;
+    text-align: left;
+    float: right;
+    margin-left: 20px;
+}
+.addJobInformation-content-text{
+    width: 500px;
+    height: 40px;
+    border: 1px solid #080808;
+    border-radius: 5px;
+    padding-left: 10px;
+    color: #000000;
+}
+.addJobInformation-content-select{
+    width: 500px;
+    height: 39px;
+    border: 1px solid #080808;
+    border-radius: 5px;
+    padding-left: 10px;
+    color: #000000;
+}
+.addJobInformation-content input[type=radio]{
+    margin:0 10px;
+}
+.addJobInformation-row-textarea{
+    width: 1040px;
+    line-height: 40px;
+    overflow: auto;
+    margin: 10px 0;
+}
+.addJobInformation-flag-textarea{
+    width: 250px;
+    text-align: right;
+    float: left;
+}
+.addJobInformation-content-area{
+    width: 760px;
+    text-align: left;
+    float: right;
+    margin-left: 20px;
+    overflow: hidden;
+}
+.addJobInformation-content-textarea{
+    width: 500px;
+    height: 120px;
+    border: 1px solid #080808;
+    border-radius: 5px;
+    resize: none;
+    padding: 5px 10px;
+    color: #000000;
+}
+.addJobInformation-row-button{
+    text-align: center;
+    width: 1040px;
+}
+.addJobInformation-content-button{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #080808;
+    color: #000000;
+    margin-bottom: 20px;
+}
+.addJobInformation-content-button:hover{
+    color: #c0c0c0;
+    background-color: #080808;
+}
+.addJobInformation-save{
+    margin-right: 30px;
+}
+.addJobInformation-cancel{
+    margin-left: 30px;
+}

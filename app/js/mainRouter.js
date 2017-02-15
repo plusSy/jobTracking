@@ -138,7 +138,22 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["js/student/jobInformationCtrl.js"]);
+                        return $ocLazyLoad.load(["css/jobInformation.css","js/student/jobInformationCtrl.js"]);
+                    }]
+                }
+            })
+            //新增就业信息
+            .state("index.addJobInformation",{
+                url : "^/addJobInformation?jobId",
+                views : {
+                    "viewDetails@index" : {
+                        templateUrl : 'code/student/addJobInformation.html',
+                        controller : 'addJobInformationCtrl'
+                    }
+                },
+                resolve:{
+                    deps:["$ocLazyLoad",function($ocLazyLoad){
+                        return $ocLazyLoad.load(["css/addJobInformation.css","js/student/addJobInformationCtrl.js"]);
                     }]
                 }
             })
