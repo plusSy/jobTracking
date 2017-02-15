@@ -1,0 +1,115 @@
+.seeTeacherDetails{
+    margin: 0 auto;
+    width: 1040px;
+    height: 610px;
+}
+.seeTeacherDetails-top{
+    margin-top: 30px;
+}
+.seeTeacherDetails-title{
+    font-size:20px;
+    border-bottom: 1px dashed #080808;
+    float: left;
+}
+.close-icno{
+    float: right;
+    cursor: pointer;
+}
+.seeTeacherDetails-content{
+    width: 980px;
+    height: 580px;
+    overflow: hidden;
+    padding: 30px 30px 0 30px;
+}
+.teacherDetails-img{
+    width: 250px;
+    float: left;
+    position: relative;
+}
+.teacherDetails-img img{
+    max-height: 250px;
+    max-width: 250px;
+}
+.teacherDetails-img-tips{
+    height: 40px;
+    width: 250px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 8px;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.8;
+}
+.teacherDetails-content{
+    width: 640px;
+    float: right;
+    height: 400px;
+}
+.teacherDetails-row{
+    height: 40px;
+    width: 640px;
+    margin-bottom: 25px;
+}
+.teacherDetails-colLeft{
+    width: 315px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+.teacherDetails-colRight{
+    width: 315px;
+    height: 40px;
+    line-height: 40px;
+    float: right;
+}
+.teacherDetails-flag{
+    float: left;
+    width: 70px;
+}
+.teacherDetails-con{
+    float: left;
+    width: 230px;
+    border-radius: 5px;
+}
+.teacherDetails-con input{
+    width: 228px;
+    border: 1px solid #080808;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.teacherDetails-con-options{
+    width: 228px;
+    height: 40px;
+    border: 1px solid #080808;
+    background-color: #ffffff;
+}
+.teacherDetails-row-textarea{
+    height: 200px;
+    width: 640px;
+}
+.teacherDetails-area{
+    width: 555px;
+    height: 170px;
+    border: 1px solid #080808;
+    border-radius: 5px;
+    resize: none;
+    padding: 5px 10px;
+}
+.teacherDetails-buttons{
+    text-align: right;
+    margin-right: 10px;
+}
+.teacherDetails-button{
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #080808;
+    color: #000000;
+}
+.teacherDetails-button:hover{
+    color: #c0c0c0;
+    background-color: #080808;
+}

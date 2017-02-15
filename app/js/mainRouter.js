@@ -77,7 +77,7 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["css/perfectInformation.css","js/teacher/perfectInformationCtrl.js"]);
+                        return $ocLazyLoad.load(["css/teacherPerfectInformation.css","js/teacher/perfectInformationCtrl.js"]);
                     }]
                 }
             })
@@ -123,7 +123,7 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["js/student/personInformationCtrl.js"]);
+                        return $ocLazyLoad.load(["css/studentPersonInformation.css","js/student/personInformationCtrl.js"]);
                     }]
                 }
             })

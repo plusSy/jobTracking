@@ -75,7 +75,7 @@ App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog){
                 $scope.personDetails = [{
                     image:'image/person.jpg',
                     name : '田力雄',
-                    gender : '男',
+                    politicsStatus : '中共党员',
                     jobNumber : '1003',
                     position : '专职辅导员',
                     phone : '18435109660',
