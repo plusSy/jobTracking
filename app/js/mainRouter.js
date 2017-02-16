@@ -45,7 +45,7 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["js/charts/chartsCtrl.js"]);
+                        return $ocLazyLoad.load(["css/charts.css","js/charts/chartsCtrl.js"]);
                     }]
                 }
             })
