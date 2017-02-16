@@ -31,7 +31,7 @@ App.controller('loginCtrl', function( $scope,$state) {
             return
         }
        if(isLogin(user.userName,user.password)){
-           $state.go('index.chart1')
+           $state.go('index.charts')
        }else{
            alert("您输入的用户名/密码不正确，请联系管理员！");
        }

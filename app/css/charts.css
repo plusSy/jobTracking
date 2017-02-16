@@ -110,11 +110,12 @@
     height: 280px;
 }
 .statistics-charts-brokenLine{
-    width: 1180px;
+    width: 1140px;
     height: 550px;
     background-color: #ffffff;
     float: left;
     border-top: 3px solid #00008b;
+    margin-left: 20px;
 }
 .statistics-brokenLine-title{
     width:100%;
@@ -126,6 +127,6 @@
     padding-left: 20px;
 }
 .statistics-brokenLine-area{
-    width: 100%;
+    width: 1140px;
     height: 500px;
 }
