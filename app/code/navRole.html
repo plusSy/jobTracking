@@ -1,5 +1,5 @@
 <div class="homeContainer">
-    <div class="homeContainerList">
+    <div class="homeContainerList" ng-class="{'navRoleHeight':clickThisNav == 'ls1'}">
         <div class="chartList"ng-if="!loginType">
             <ul>
                 <li ng-class="{'clickThisNav':clickThisNav == 'ls1'}" ui-sref="index.charts">总揽</li>

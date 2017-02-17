@@ -4,11 +4,14 @@
 }
 .homeContainerList{
     width: 230px;
-    height: 640px;
+    min-height: 640px;
     background-color: #1c2b36 ;
     color: #869fb1;
     float: left;
     border-right: 1px solid #080808;
+}
+.navRoleHeight{
+    height: 1900px;
 }
 .chartList{
 
@@ -27,6 +30,8 @@
 }
 .chartCon{
     width: 1170px;
+    min-height: 640px;
+    max-height: 1900px;
     margin-left: 230px;
     overflow: hidden;
 }

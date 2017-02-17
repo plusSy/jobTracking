@@ -14,7 +14,7 @@ App.controller('loginCtrl', function( $scope,$state) {
         loginType : 3
     }];
 
-     var userLoginType;
+    var userLoginType;
     function isLogin(userName,password){
         var flag = false;
         angular.forEach(hasRegister,function(val,key){
