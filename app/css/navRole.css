@@ -20,6 +20,8 @@
     cursor: pointer;
 }
 .chartList ul li:hover{
+    border-top: 1px solid #080808;
+    border-bottom: 1px solid #080808;
     background-color: #c3d0d9;
     color: #1c2b36;
 }

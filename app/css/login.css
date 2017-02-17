@@ -1,5 +1,5 @@
 .login-page{
-    padding-top: 240px;
+    padding-top: 200px;
 }
 .login-img{
     position: fixed;
@@ -27,4 +27,17 @@
     border: none;
     border-radius: 30px;
     font-size: 15px;
+}
+.login-title{
+    width: 565px;
+    font-size: 40px;
+    color: #ffffff;
+    margin: 0 auto 40px;
+}
+.login-copyright{
+    position: fixed;
+    right: 30px;
+    bottom: 0;
+    color: #ffffff;
+    font-size: 14px;
 }

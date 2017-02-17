@@ -31,3 +31,9 @@
     color: #000000;
     cursor: pointer;
 }
+.logIn>span{
+    margin-right: 20px;
+}
+.logIn>span:hover{
+    color: #2aabd2;
+}

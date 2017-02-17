@@ -20,7 +20,8 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                         templateUrl : "code/main.html"
                     },
                     'topbar@index' : {
-                        templateUrl : 'code/topbar.html'
+                        templateUrl : 'code/topbar.html',
+                        controller:'topbarCtrl'
                     },
                     'main@index' : {
                         templateUrl : "code/navRole.html",
@@ -29,7 +30,7 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["css/topbar.css","css/navRole.css","js/navRoleCtl.js"]);
+                        return $ocLazyLoad.load(["css/topbar.css","css/navRole.css","js/topbarCtrl.js","js/navRoleCtl.js"]);
                     }]
                 }
             })
