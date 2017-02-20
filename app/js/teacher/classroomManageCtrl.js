@@ -25,7 +25,7 @@ App.controller('classroomManageCtrl',function($scope,$rootScope,$stateParams,ngD
     $scope.cheangePassword = function(){
         ngDialog.open({
             width: 410,
-            template: 'code/common/changePassword.html',
+            template: 'code/common/adminChangePassword.html',
             className: 'ngdialog-theme-default',
             showClose: false,
             closeByDocument : false,

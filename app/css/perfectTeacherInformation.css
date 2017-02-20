@@ -7,11 +7,31 @@
 .teacherInformationTop{
     width: 100%;
     height: 80px;
-    line-height: 80px;
     border-bottom: 1px solid #080808;
+    overflow: hidden;
 }
-
-
+.teacherInformation-Tips{
+    float: left;
+    line-height: 80px;
+}
+.teacherInformation-changePassword{
+    float: right;
+}
+.teacherInformation-changePassword button{
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #080808;
+    background-color: #c0c0c0;
+    color: #080808;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.teacherInformation-changePassword button:hover{
+    border: 1px solid #c0c0c0;
+    background-color: #080808;
+    color: #c0c0c0;
+}
 .seeTeacherDetails-top{
     margin: 10px;
 }

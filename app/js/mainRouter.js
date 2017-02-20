@@ -68,17 +68,17 @@ App.config(function ($stateProvider,$urlRouterProvider) {
             })
             /**————————————————————————————————————————教师管理端     teacherManager—————————————————————————————————————————————**/
             //教师完善信息
-            .state("index.perfectInformation",{
-                url : "^/perfectInformation",
+            .state("index.perfectTeacherInformation",{
+                url : "^/perfectTeacherInformation",
                 views : {
                     "viewDetails@index" : {
-                        templateUrl : 'code/teacher/perfectInformation.html',
-                        controller : 'perfectInformationCtrl'
+                        templateUrl : 'code/teacher/perfectTeacherInformation.html',
+                        controller : 'perfectTeacherInformationCtrl'
                     }
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["css/teacherPerfectInformation.css","js/teacher/perfectInformationCtrl.js"]);
+                        return $ocLazyLoad.load(["css/perfectTeacherInformation.css","js/teacher/perfectTeacherInformation.js"]);
                     }]
                 }
             })
@@ -114,17 +114,17 @@ App.config(function ($stateProvider,$urlRouterProvider) {
             })
              /**————————————————————————————————————————学生端     studentManager—————————————————————————————————————————————**/
             //学生个人信息完善
-            .state("index.personInformation",{
-                url : "^/personInformation",
+            .state("index.studentPersonInformation",{
+                url : "^/studentPersonInformation",
                 views : {
                     "viewDetails@index" : {
-                        templateUrl : 'code/student/personInformation.html',
-                        controller : 'personInformationCtrl'
+                        templateUrl : 'code/student/studentPersonInformation.html',
+                        controller : 'studentPersonInformationCtrl'
                     }
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["css/studentPersonInformation.css","js/student/personInformationCtrl.js"]);
+                        return $ocLazyLoad.load(["css/studentPersonInformation.css","js/student/studentPersonInformationCtrl.js"]);
                     }]
                 }
             })

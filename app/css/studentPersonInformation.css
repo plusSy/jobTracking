@@ -5,11 +5,29 @@
 }
 .seeTeacherDetails-top{
     margin-top: 30px;
+    overflow: hidden;
 }
 .seeTeacherDetails-title{
     font-size:20px;
     border-bottom: 1px dashed #080808;
     float: left;
+}
+.seeTeacherDetails-changeStudentPassword{
+    float: right;
+}
+.seeTeacherDetails-changeStudentPassword button{
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #080808;
+    background-color: #c0c0c0;
+    color: #080808;
+    margin-right: 25px;
+}
+.seeTeacherDetails-changeStudentPassword button:hover{
+    border: 1px solid #c0c0c0;
+    background-color: #080808;
+    color: #c0c0c0;
 }
 .close-icno{
     float: right;

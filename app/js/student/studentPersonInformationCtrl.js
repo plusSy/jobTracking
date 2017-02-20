@@ -2,10 +2,27 @@
  * personInformationCtrl 个人信息
  * Created by applesyl on 2017/2/13.
  */
-App.controller('personInformationCtrl',function($scope,$rootScope,$stateParams){
+App.controller('studentPersonInformationCtrl',function($scope,$rootScope,ngDialog,$stateParams){
 
     //设置导航选中项
     $rootScope.clickThisNav = 'ls2';
+
+
+    $scope.changeStudentPassword = function (){
+        ngDialog.open({
+            width: 410,
+            template: 'code/common/changePassword.html',
+            className: 'ngdialog-theme-default',
+            showClose: false,
+            closeByDocument : false,
+            closeByEscape : false,
+            controller: function($scope) {
+                $scope.closeThisDialog = function() {
+                    ngDialog.close(); //关闭弹窗
+                };
+            }
+        })
+    };
 
     $scope.personDetails = [{
         image:'image/person.jpg',

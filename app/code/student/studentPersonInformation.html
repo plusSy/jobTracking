@@ -2,12 +2,15 @@
 <div class="seeTeacherDetails">
     <div class="seeTeacherDetails-top">
         <div class="seeTeacherDetails-title">学生详细信息</div>
+        <div class="seeTeacherDetails-changeStudentPassword">
+            <button ng-click="changeStudentPassword()">修改密码</button>
+        </div>
     </div>
     <div class="seeTeacherDetails-content" ng-repeat="infor in personDetails">
         <div class="teacherDetails-img" ng-if="!infor.image">
             <img src="image/person.jpg" alt="{{infor.name}}">
             <div class="teacherDetails-img-tips">
-                <span>该教师还没有照片</span>
+                <span>该学生还没有照片</span>
             </div>
         </div>
         <div class="teacherDetails-img" ng-if="infor.image">
