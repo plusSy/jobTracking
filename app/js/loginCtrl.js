@@ -1,5 +1,12 @@
+/**
+ * Created by applesyl on 2017/1/30.
+ *
+ * 登陆
+ */
 App.controller('loginCtrl', function( $scope,$state) {
 
+
+    //模拟数据
     var hasRegister =[{
         userName : 'admin',
         password : 'admin',
@@ -14,6 +21,9 @@ App.controller('loginCtrl', function( $scope,$state) {
         loginType : 3
     }];
 
+
+
+    //判断写死情况下登陆账户密码和类型
     var userLoginType;
     function isLogin(userName,password){
         var flag = false;
@@ -36,10 +46,39 @@ App.controller('loginCtrl', function( $scope,$state) {
            window.localStorage.user_name    = user.userName;
 
            window.localStorage.login_type   = userLoginType;
-           console.log('====',window.localStorage.login_type);
            $state.go('index.charts')
        }else{
            alert("您输入的用户名/密码不正确，请联系管理员！");
        }
-    }
+    };
+
+
+
+    /*登陆连调*/
+    //$scope.login = function (user) {
+    //    if(!user){
+    //        alert('请输入用户名和密码！');
+    //        return
+    //    }
+    //
+    //    var getAccount = $resource('http://10.211.54.207:8080/' + 'test05/user/login', {}, {
+    //        save: {
+    //            method: 'POST'
+    //        }
+    //    });
+    //    var para = {
+    //        'user_num' : user.userName,
+    //        'password' : user.password
+    //    };
+    //    getAccount.save({}, para, function(data) {
+    //        if(angular.isUndefined(data.error)) {
+    //            debugger;
+    //            window.localStorage.user_name    = user.userName;
+    //            window.localStorage.login_type   = userLoginType;
+    //            $state.go('index.charts')
+    //        } else {
+    //            alert("您输入的用户名/密码不正确，请联系管理员！");
+    //        }
+    //    });
+    // }
 })

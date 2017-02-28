@@ -62,7 +62,7 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["css/adminManager.css","js/admin/adminCtrl.js"]);
+                        return $ocLazyLoad.load(["ngTable","css/adminManager.css","js/admin/adminCtrl.js"]);
                     }]
                 }
             })
@@ -108,7 +108,7 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["css/classroomManage.css","js/teacher/classroomManageCtrl.js"]);
+                        return $ocLazyLoad.load(["ngTable","css/classroomManage.css","js/teacher/classroomManageCtrl.js"]);
                     }]
                 }
             })
@@ -139,7 +139,7 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                 },
                 resolve:{
                     deps:["$ocLazyLoad",function($ocLazyLoad){
-                        return $ocLazyLoad.load(["css/jobInformation.css","js/student/jobInformationCtrl.js"]);
+                        return $ocLazyLoad.load(["ngTable","css/jobInformation.css","js/student/jobInformationCtrl.js"]);
                     }]
                 }
             })

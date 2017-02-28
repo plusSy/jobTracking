@@ -7,21 +7,25 @@ App.controller('studentPersonInformationCtrl',function($scope,$rootScope,ngDialo
     //设置导航选中项
     $rootScope.clickThisNav = 'ls2';
 
-
+    var studentId = window.localStorage.user_id;
+    //修改密码
     $scope.changeStudentPassword = function (){
-        ngDialog.open({
-            width: 410,
-            template: 'code/common/changePassword.html',
-            className: 'ngdialog-theme-default',
-            showClose: false,
-            closeByDocument : false,
-            closeByEscape : false,
-            controller: function($scope) {
-                $scope.closeThisDialog = function() {
-                    ngDialog.close(); //关闭弹窗
-                };
-            }
-        })
+        if(studentId){
+            ngDialog.open({
+                width: 410,
+                template: 'code/common/changePassword.html',
+                className: 'ngdialog-theme-default',
+                showClose: false,
+                closeByDocument : false,
+                closeByEscape : false,
+                controller: function($scope) {
+                    $scope.closeThisDialog = function() {
+                        ngDialog.close(); //关闭弹窗
+                    };
+
+                }
+            })
+        }
     };
 
     $scope.personDetails = [{
@@ -54,4 +58,26 @@ App.controller('studentPersonInformationCtrl',function($scope,$rootScope,ngDialo
         }],
         intro : '这是一个十分敬业的老师'
     }];
+
+    ////通过studentsId查询专家详情
+    //function queryPersonExperts() {
+    //    var temp = $resource(base_url + 'personals/expert-info/:personalId');
+    //    var param = {
+    //        personalId:window.localStorage.user_id
+    //    };
+    //    temp.get(param,function(data){
+    //        if(angular.isUndefined(data.error)){
+    //            $scope.personDetails = data.result;
+    //        }else{
+    //            var message = $filter('T')(data.error.code+""+data.error.error_subcode);
+    //            ngDialog.open({data:{'message':message},template: 'message',className:'short-message'});
+    //        }
+    //    });
+    //}
+    //
+    ////当参数存在的时候执行查询函数
+    //if(window.localStorage.user_id){
+    //    queryPersonExperts();
+    //}
+
 });
