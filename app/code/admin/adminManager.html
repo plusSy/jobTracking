@@ -38,22 +38,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="details in allTeacher">
+                <tr ng-repeat="details in allTeachers">
                     <td>
                         <input type="checkbox">
                         {{$index+1}}
                     </td>
                     <td>
-                        <span ng-bind="details.name"></span>
+                        <span ng-bind="details.user_name"></span>
                     </td>
                     <td>
-                        <span ng-bind="details.jobNumber"></span>
+                        <span ng-bind="details.user_num"></span>
                     </td>
                     <td>
                         <span ng-bind="details.position"></span>
                     </td>
                     <td>
-                       <span ng-bind="details.regDate"></span>
+                       <span ng-bind="details.create_date"></span>
                     </td>
                     <td>
                         <div class="operation-teacherUsers">
