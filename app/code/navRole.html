@@ -1,31 +1,31 @@
 <div class="homeContainer">
-    <div class="homeContainerList" ng-class="{'navRoleHeight':clickThisNav == 'ls1'}">
-        <div class="chartList"ng-if="!loginType">
+    <div class="homeContainerList" ng-class="{'navRoleHeight': state.includes('index.charts')}">
+        <div class="chartList" ng-if="!loginType">
             <ul>
-                <li ng-class="{'clickThisNav':clickThisNav == 'ls1'}" ui-sref="index.charts">总揽</li>
+                <li ng-class="{'clickThisNav': state.includes('index.charts')}" ui-sref="index.charts">总揽</li>
             </ul>
         </div>
         <!--学生-->
         <div class="chartList" ng-if="loginType == 3">
             <ul>
-                <li ng-class="{'clickThisNav':clickThisNav == 'ls1'}" ui-sref="index.charts">总揽</li>
-                <li ng-class="{'clickThisNav':clickThisNav == 'ls2'}" ui-sref="index.studentPersonInformation">个人信息</li>
-                <li ng-class="{'clickThisNav':clickThisNav == 'ls3'}" ui-sref="index.jobInformation">工作信息</li>
+                <li ng-class="{'clickThisNav': state.includes('index.charts')}" ui-sref="index.charts">总揽</li>
+                <li ng-class="{'clickThisNav': state.includes('index.studentPersonInformation')}" ui-sref="index.studentPersonInformation">个人信息</li>
+                <li ng-class="{'clickThisNav': state.includes('index.jobInformation')}" ui-sref="index.jobInformation">工作信息</li>
             </ul>
         </div>
         <!--教师-->
         <div class="chartList" ng-if="loginType == 2">
             <ul>
-                <li ng-class="{'clickThisNav':clickThisNav == 'ls1'}" ui-sref="index.charts">总揽</li>
-                <li ng-class="{'clickThisNav':clickThisNav == 'ls4'}" ui-sref="index.perfectTeacherInformation">完善信息</li>
-                <li ng-class="{'clickThisNav':clickThisNav == 'ls5'}" ui-sref="index.manageClassroom">管理班级</li>
+                <li ng-class="{'clickThisNav': state.includes('index.charts')}" ui-sref="index.charts">总揽</li>
+                <li ng-class="{'clickThisNav': state.includes('index.perfectTeacherInformation')}" ui-sref="index.perfectTeacherInformation">完善信息</li>
+                <li ng-class="{'clickThisNav': state.includes('index.manageClassroom')}" ui-sref="index.manageClassroom">管理班级</li>
             </ul>
         </div>
         <!--Admin-->
         <div class="chartList" ng-if="loginType == 1">
             <ul>
-                <li ng-class="{'clickThisNav':clickThisNav == 'ls1'}" ui-sref="index.charts">总揽</li>
-                <li ng-class="{'clickThisNav':clickThisNav == 'ls6'}" ui-sref="index.admin">管理员入口</li>
+                <li ng-class="{'clickThisNav': state.includes('index.charts')}" ui-sref="index.charts">总揽</li>
+                <li ng-class="{'clickThisNav': state.includes('index.admin')}" ui-sref="index.admin">管理员入口</li>
             </ul>
         </div>
     </div>

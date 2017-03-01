@@ -4,10 +4,9 @@
  */
 App.controller('studentPersonInformationCtrl',function($scope,$rootScope,ngDialog,$stateParams){
 
-    //设置导航选中项
-    $rootScope.clickThisNav = 'ls2';
 
     var studentId = window.localStorage.user_id;
+
     //修改密码
     $scope.changeStudentPassword = function (){
         if(studentId){

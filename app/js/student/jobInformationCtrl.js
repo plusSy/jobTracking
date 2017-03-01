@@ -4,9 +4,6 @@
  */
 App.controller('jobInformationCtrl',function($scope,$rootScope,ngDialog,$stateParams,NgTableParams){
 
-    //设置导航选中项
-    $rootScope.clickThisNav = 'ls3';
-
 
     //删除工作信息
     $scope.removerJobInformation = function () {

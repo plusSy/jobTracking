@@ -99,7 +99,7 @@ App.config(function ($stateProvider,$urlRouterProvider) {
             })
             //班级管理信息
             .state("index.manageClassroom.classroomManage",{
-                url : "^/classroomManage",
+                url : "^/classroomManage?className",
                 views : {
                     "classroom@index.manageClassroom" : {
                         templateUrl : 'code/teacher/classroomManage.html',

@@ -4,9 +4,6 @@
  */
 App.controller('perfectTeacherInformationCtrl',function($scope,$rootScope,ngDialog,$stateParams){
 
-    //设置导航选中项
-    $rootScope.clickThisNav = 'ls4';
-
     $scope.changeTeacherPassword = function(){
         ngDialog.open({
             width: 410,

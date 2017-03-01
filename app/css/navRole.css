@@ -4,7 +4,7 @@
 }
 .homeContainerList{
     width: 230px;
-    min-height: 640px;
+    min-height: 730px;
     background-color: #1c2b36 ;
     color: #869fb1;
     float: left;
@@ -12,6 +12,9 @@
 }
 .navRoleHeight{
     height: 1900px;
+}
+.jobHeight{
+    height: 886px;
 }
 .chartList{
 
@@ -30,16 +33,16 @@
 }
 .chartCon{
     width: 1170px;
-    min-height: 640px;
+    min-height: 680px;
     max-height: 1900px;
     margin-left: 230px;
     overflow: hidden;
 }
 .bottom{
     width: 1175px;
-    height: 50px;
+    height: 45px;
     border-top:1px solid #080808;
-    line-height: 50px;
+    line-height: 45px;
     text-align: center;
     margin-left: 230px;
 }

@@ -1,6 +1,8 @@
 /*addJobInformation.css  新增添加就业信息*/
 .addJobInformation{
     width: 1040px;
+    height: 640px;
+    overflow: auto;
     margin: 0 auto;
 }
 .addJobInformation-top{

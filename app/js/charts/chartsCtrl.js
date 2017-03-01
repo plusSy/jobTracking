@@ -4,10 +4,6 @@
  */
 App.controller('chartsCtrl',function($scope,$rootScope,$stateParams,$resource) {
 
-    //设置导航选中项
-    $rootScope.clickThisNav = 'ls1';
-
-
     //就业行业分布
     //接口联调时候 将此放开
     //var list = $resource(baseurl+'/jahwa/echarts/histogramchart');
