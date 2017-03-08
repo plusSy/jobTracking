@@ -19,7 +19,7 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                     '' : {
                         templateUrl : "code/main.html"
                     },
-                    'topbar@index' : {
+                    'top@index' : {
                         templateUrl : 'code/topbar.html',
                         controller:'topbarCtrl'
                     },

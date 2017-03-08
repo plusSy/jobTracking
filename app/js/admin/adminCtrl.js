@@ -5,21 +5,21 @@
 App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog,$resource,NgTableParams){
 
     //查看所有教师
-    $scope.allTeacher = [{
-        name : '王虎威',
-        jobNumber : '1001',
+    $scope.allTeachers = [{
+        user_name : '王虎威',
+        user_num : '1001',
         position : '党支部书记',
-        regDate : '2017年2月12日'
+        create_date : '2017年2月12日'
     },{
-        name : '刘赟',
-        jobNumber : '1002',
+        user_name : '刘赟',
+        user_num : '1002',
         position : '党支部副书记',
-        regDate : '2017年2月12日'
+        create_date : '2017年2月12日'
     },{
-        name : '田力雄',
-        jobNumber : '1003',
+        user_name : '田力雄',
+        user_num : '1003',
         position : '专职辅导员',
-        regDate : '2017年2月12日'
+        create_date : '2017年2月12日'
     }];
 
     ////检索学生就业数据，绑定到$data上
@@ -48,22 +48,22 @@ App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog,$res
     //    });
     //}});
 
-    //请求所有的教师信息
-    function getAllTeacher (){
-        var temp = $resource('http://10.211.54.207:8080/'+'test05/principal/select-all-teacher');
-
-        var param ={
-
-        };
-
-        temp.get(param,function(data) {
-            debugger;
-            $scope.allTeachers = data.result;
-        },function(){
-            alert('请求失败');
-        });
-
-    }
+    ////请求所有的教师信息
+    //function getAllTeacher (){
+    //    var temp = $resource('http://10.211.54.207:8080/'+'test05/principal/select-all-teacher');
+    //
+    //    var param ={
+    //
+    //    };
+    //
+    //    temp.get(param,function(data) {
+    //        debugger;
+    //        $scope.allTeachers = data.result;
+    //    },function(){
+    //        alert('请求失败');
+    //    });
+    //
+    //}
 
 
     //添加教师
@@ -75,11 +75,14 @@ App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog,$res
             showClose: false,
             closeByDocument : false,
             closeByEscape : false,
-            controller: function($scope) {
-                $scope.closeThisDialog = function() {
-                    ngDialog.close(); //关闭弹窗
-                };
-            }
+            controller:
+                function($scope) {
+                    $scope.closeThisDialog = function() {
+                        ngDialog.close(); //关闭弹窗
+                    };
+
+                    //添加教师
+                }
         })
     };
 
@@ -168,6 +171,6 @@ App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog,$res
     //页面初始化加载完成事件
     $scope.$on('$viewContentLoaded', function() {
         //查询所属类型
-        getAllTeacher();
+        //getAllTeacher();
     });
 });

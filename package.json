@@ -5,6 +5,7 @@
     "start": "gulp"
   },
   "dependencies": {
+    "gulp-connect": "^5.0.0",
     "gulp-ng-config": "^1.4.0",
     "gulp-rename": "^1.2.2",
     "ng-table": "^3.0.1",
