@@ -1,9 +1,11 @@
 /**
  * 主模块
  */
+
+var base_url = 'http://10.211.54.207:8080/test05/';
+
 var App = angular.module('App', ['ui.router', 'ngResource', 'ngDialog', 'oc.lazyLoad']);
 
-    var base_url;
     App.run(function() {
 
         //设置请求基础路径

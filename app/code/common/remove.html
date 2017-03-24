@@ -60,14 +60,14 @@
     <div class="remove-content">
         <div>
             确定删除
-            <span>***</span>
+            <span>{{title}}</span>
         </div>
         <div class="content-topics">
             (这么做，你会失去他的！)
         </div>
     </div>
     <div class="remove-buttons">
-        <button class="remove-yes remove-button">确定</button>
+        <button class="remove-yes remove-button" ng-click="ok()">确定</button>
         <button class="remove-no remove-button" ng-click="closeThisDialog()">取消</button>
     </div>
 </div>

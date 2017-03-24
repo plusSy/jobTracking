@@ -72,30 +72,30 @@
         <div class="message">
             <div class="message-flag">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</div>
             <div class="message-details">
-                <input type="text">
+                <input type="text" ng-model="teacher.name">
             </div>
         </div>
         <div class="message">
             <div class="message-flag">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务：</div>
             <div class="message-details">
-                <input type="text">
+                <input type="text" ng-model="teacher.duty">
             </div>
         </div>
         <div class="message">
             <div class="message-flag">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</div>
             <div class="message-details">
-                <input type="text">
+                <input type="text" ng-model="teacher.jobNumber">
             </div>
         </div>
         <div class="message">
             <div class="message-flag">初始密码：</div>
             <div class="message-details">
-                <input type="text">
+                <input type="text" ng-model="teacher.oldPassword">
             </div>
         </div>
     </div>
     <div class="addTeacher-buttons">
-        <button class="add-sure add-button">确定</button>
+        <button class="add-sure add-button" ng-click="addTeacher(teacher)">确定</button>
         <button class="add-cancel add-button" ng-click="closeThisDialog()">取消</button>
     </div>
 </div>

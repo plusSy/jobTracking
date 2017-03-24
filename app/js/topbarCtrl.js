@@ -7,7 +7,7 @@ App.controller('topbarCtrl',function($scope,$state){
     $scope.userName = window.localStorage.user_name;
 
     $scope.clearUser = function(){
-        window.localStorage.user_name = '';
+        localStorage.removeItem('user_name');
         $state.go('login');
     }
 });

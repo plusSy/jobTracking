@@ -2,175 +2,217 @@
  * adminCtrl  管理端
  * Created by applesyl on 2017/2/10.
  */
-App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog,$resource,NgTableParams){
+App.controller('adminCtrl',function($scope,$rootScope,$stateParams,ngDialog,$resource,$state,NgTableParams){
 
-    //查看所有教师
-    $scope.allTeachers = [{
-        user_name : '王虎威',
-        user_num : '1001',
-        position : '党支部书记',
-        create_date : '2017年2月12日'
-    },{
-        user_name : '刘赟',
-        user_num : '1002',
-        position : '党支部副书记',
-        create_date : '2017年2月12日'
-    },{
-        user_name : '田力雄',
-        user_num : '1003',
-        position : '专职辅导员',
-        create_date : '2017年2月12日'
-    }];
+//添加教师
+$scope.addTeacher = function(){
 
-    ////检索学生就业数据，绑定到$data上
-    //var tableData=[];
-    //
-    //$scope.tableParams = new NgTableParams({page:1,count:5},{counts: [],total: tableData.length,getData: function($defer, params) {
-    //    //var temp = $resource(base_url + 'personals/experts-info');
-    //    var temp = $resource('http://10.211.54.207:8080/'+'principal/select-all-teacher');
-    //
-    //    //var param = {
-    //    //    'pageNo':params.page(),
-    //    //    'pageSize':params.count(),
-    //    //    "_":new Date().getTime()
-    //    //};
-    //    temp.get({},function(data,headers){
-    //        if(angular.isUndefined(data.error)){
-    //            $scope.info = data.result;
-    //            tableData = $scope.info;
-    //            params.total(data.page.total_elements); // 设置过滤后总共有多少数据，用于页面确定到底分几页 {{tableParams.total()}} 这个是会显示分页栏
-    //            params.totalPages = Math.ceil(tableData.length/params.count()); //自定义返回当前数据总页数，用于跳转判断 {{tableParams.totalPages}}
-    //            $defer.resolve(tableData);	//更新数据 就是页面上的$data
-    //        }else{
-    //            var message = $filter('T')(data.error.code+""+data.error.error_subcode);
-    //            ngDialog.open({data:{'message':message},template: 'message',className:'short-message'});
-    //        }
-    //    });
-    //}});
-
-    ////请求所有的教师信息
-    //function getAllTeacher (){
-    //    var temp = $resource('http://10.211.54.207:8080/'+'test05/principal/select-all-teacher');
-    //
-    //    var param ={
-    //
-    //    };
-    //
-    //    temp.get(param,function(data) {
-    //        debugger;
-    //        $scope.allTeachers = data.result;
-    //    },function(){
-    //        alert('请求失败');
-    //    });
-    //
-    //}
+        if($rootScope.jobNumber){
+            ngDialog.open({
+                width: 410,
+                template: 'code/admin/addTeacher.html',
+                className: 'ngdialog-theme-default',
+                showClose: false,
+                closeByDocument : false,
+                closeByEscape : false,
+                controller:
+                    function($scope,$state) {
+                        $scope.closeThisDialog = function() {
+                            ngDialog.close(); //关闭弹窗
+                        };
+                        $scope.teacher = {
+                            'name' : '',
+                            'duty' : '',
+                            'jobNumber' : $rootScope.jobNumber,
+                            'oldPassword' : '123456'
+                        };
 
 
-    //添加教师
-    $scope.addTeacher = function(){
-        ngDialog.open({
-            width: 410,
-            template: 'code/admin/addTeacher.html',
-            className: 'ngdialog-theme-default',
-            showClose: false,
-            closeByDocument : false,
-            closeByEscape : false,
-            controller:
-                function($scope) {
-                    $scope.closeThisDialog = function() {
-                        ngDialog.close(); //关闭弹窗
-                    };
+                        //添加教师
+                        $scope.addTeacher = function (teacher) {
+                            if(!teacher.name || !teacher.duty || !teacher.jobNumber || !teacher.oldPassword){
+                                alert('请输入完整的信息！');
+                                return
+                            }
+                            var getAccount = $resource(base_url + 'user/regist', {}, {
+                                save: {
+                                    method: 'POST'
+                                }
+                            });
+                            var para = {
+                                'user_name' : teacher.name,
+                                'position' : teacher.duty,
+                                'user_num' : teacher.jobNumber,
+                                'password' : teacher.oldPassword,
+                                'role_id' : '2'
+                            };
+                            getAccount.save({}, para, function(data) {
+                                if(angular.isUndefined(data.error)) {
+                                    ngDialog.close();
+                                    getAllTeacher();
+                                    $state.go('index.admin');
+                                } else {
+                                    alert("您输入的用户名/密码不正确，请联系管理员！");
+                                }
+                            });
 
-                    //添加教师
+                        }
+
+                    }
+            });
+        }
+    };
+
+//修改密码
+$scope.cheangePassword = function(teacherId,teacherNum){
+    ngDialog.open({
+        scope: $scope,
+        width: 410,
+        template: 'code/common/adminChangePassword.html',
+        className: 'ngdialog-theme-default',
+        showClose: false,
+        closeByDocument : false,
+        closeByEscape : false,
+        controller:  ['$scope', '$resource', function($scope, $resource) {
+            $scope.closeThisDialog = function() {
+                ngDialog.close(); //关闭弹窗
+            };
+            $scope.ok = function(password){
+                if (!teacherId) {
+                    return
                 }
-        })
-    };
-
-    //修改密码
-    $scope.cheangePassword = function(){
-        ngDialog.open({
-            width: 410,
-            template: 'code/common/adminChangePassword.html',
-            className: 'ngdialog-theme-default',
-            showClose: false,
-            closeByDocument : false,
-            closeByEscape : false,
-            controller: function($scope) {
-                $scope.closeThisDialog = function() {
-                    ngDialog.close(); //关闭弹窗
+                if(password.newPassword != password.conformPassword){
+                    alert('两次密码输入不一致。');
+                    return;
+                }
+                $scope.password = {
+                    newPassword : password.newPassword,
+                    conformPassword : password.conformPassword
                 };
+                var temp = $resource(base_url + 'user/update-user-password/:userId',{},{update:{'method':'put'}});
+                var para = {
+                    'userId' : teacherId,
+                    'userNum' : teacherNum,
+                    'newPassword' : $scope.password.newPassword,
+                    'resPassword' : $scope.password.conformPassword
+                };
+                temp.update(para,{},function(data,header){
+                    if (angular.isUndefined(data.error)) {
+                        ngDialog.close(); //关闭弹窗
+                        getAllTeacher();
+                    } else {
+                        //alert("您输入的用户名/密码不正确，请联系管理员！");
+                    }
+                });
             }
-        })
-    };
+        }]
+    })
+};
 
-    //查看个人教师信息
-    $scope.seeTeacherDetails = function(){
+//查看个人教师信息
+$scope.seeTeacherDetails = function(teacherId){
+    if(teacherId){
         ngDialog.open({
+            scope:$scope,
             width: 1020,
             template: 'code/admin/seeTeacherDetails.html',
             className: 'ngdialog-theme-default',
             showClose: false,
             closeByDocument : false,
             closeByEscape : false,
-            controller: function($scope) {
+            controller: ['$scope', '$resource', function($scope, $resource) {
                 $scope.closeThisDialog = function() {
                     ngDialog.close(); //关闭弹窗
                 };
-                $scope.personDetails = [{
-                    image:'image/person.jpg',
-                    name : '田力雄',
-                    politicsStatus : '中共党员',
-                    jobNumber : '1003',
-                    position : '专职辅导员',
-                    phone : '18435109660',
-                    email : '792381585@qq.com',
-                    address : '山西省太原市小店区',
-                    clazz : [{
-                        clazzId : '1',
-                        clazzName : '13电子G1班'
-                    },{
-                        clazzId : '2',
-                        clazzName : '13电子G2班'
-                    },{
-                        clazzId : '3',
-                        clazzName : '13通信G1班'
-                    },{
-                        clazzId : '4',
-                        clazzName : '13通信G2班'
-                    },{
-                        clazzId : '5',
-                        clazzName : '13软件G3班'
-                    },{
-                        clazzId : '6',
-                        clazzName : '13计科D班'
-                    }],
-                    intro : '这是一个十分敬业的老师'
-                }];
-            }
-        })
-    };
-
-    //删除
-    $scope.removerTeacher = function(){
-        ngDialog.open({
-            width: 360,
-            template: 'code/common/remove.html',
-            className: 'ngdialog-theme-default',
-            showClose : false,
-            closeByDocument : false,
-            closeByEscape : false,
-            controller: function($scope) {
-                $scope.closeThisDialog = function() {
-                    ngDialog.close(); //关闭弹窗
+                var temp = $resource( base_url +'teacher/select-teacher-details/:teacherId');
+                var param ={
+                    'teacherId': teacherId
                 };
-            }
+                temp.get(param,function(data) {
+                    $scope.personDetails = data.result;
+                    console.log(personDetails);
+                },function(){
+                    alert('请求失败');
+                });
+            }]
         })
-    };
+    }
+};
 
-
-    //页面初始化加载完成事件
-    $scope.$on('$viewContentLoaded', function() {
-        //查询所属类型
-        //getAllTeacher();
+//删除教师
+$scope.removerTeacher = function(teacherId,teacherName){
+    $scope.title = teacherName;
+    ngDialog.open({
+        scope: $scope,
+        width: 360,
+        template: 'code/common/remove.html',
+        className: 'ngdialog-theme-default',
+        showClose : false,
+        closeByDocument : false,
+        closeByEscape : false,
+        controller: ['$scope', '$resource', function($scope, $resource) {
+            $scope.closeThisDialog = function() {
+                ngDialog.close(); //关闭弹窗
+            };
+            $scope.ok = function(){
+                ngDialog.close();
+                if (!teacherId) {
+                    return
+                }
+                var resource_delete = $resource(base_url + 'user/delete-teacher/:userId', {}, {delete: {method: 'delete'}});
+                var para = {
+                    'userId' : teacherId
+                };
+                resource_delete.delete(para,function (data) {
+                    if (angular.isUndefined(data.error)) {
+                        getAllTeacher();
+                    } else {
+                        //alert("您输入的用户名/密码不正确，请联系管理员！");
+                    }
+                });
+            }
+        }]
     });
+};
+
+//页面初始化加载完成事件
+$scope.$on('$viewContentLoaded', function() {
+    //查询所属类型
+    getAllTeacher();
+
+    //查询教师工号
+    queryTeacherJobNumber();
+});
+
+
+//请求所有的教师信息
+function getAllTeacher (){
+    var temp = $resource( base_url +'principal/select-all-teacher');
+
+    var param ={
+
+    };
+
+    temp.get(param,function(data) {
+        $scope.allTeachers = data.result;
+    },function(){
+        alert('请求失败');
+    });
+
+}
+
+//查询教师工号
+function queryTeacherJobNumber (){
+    var temp = $resource( base_url +'user/work-number');
+
+    var param ={
+        role: '2'
+    };
+
+    temp.get(param,function(data) {
+        $rootScope.jobNumber = data.result;
+    },function(){
+        alert('请求失败');
+    });
+}
 });

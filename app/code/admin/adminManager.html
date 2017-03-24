@@ -57,9 +57,9 @@
                     </td>
                     <td>
                         <div class="operation-teacherUsers">
-                            <button class="operation-button" ng-click="cheangePassword()">修改密码</button>
-                            <button class="operation-button" ng-click="seeTeacherDetails()">查看信息</button>
-                            <button class="operation-button" ng-click="removerTeacher()">删除</button>
+                            <button class="operation-button" ng-click="cheangePassword(details.teacher_id,details.user_num)">修改密码</button>
+                            <button class="operation-button" ng-click="seeTeacherDetails(details.teacher_id)">查看信息</button>
+                            <button class="operation-button" ng-click="removerTeacher(details.teacher_id,details.user_name)">删除</button>
                         </div>
                     </td>
                 </tr>

@@ -96,15 +96,15 @@
         </div>
     </div>
     <div class="seeTeacherDetails-content" ng-repeat="infor in personDetails">
-        <div class="teacherDetails-img" ng-if="!infor.image">
-            <img src="image/person.jpg" alt="{{infor.name}}">
+        <div class="teacherDetails-img" ng-if="!infor.url_img">
+            <img src="image/person.jpg" alt="{{infor.user_name}}">
             <div class="teacherDetails-img-tips">
                 <span>该教师还没有照片</span>
             </div>
         </div>
-        <div class="teacherDetails-img" ng-if="infor.image">
-            <img src="{{infor.image}}" alt="{{infor.name}}">
-            <!--<div class="teacherDetails-img-tips">-->
+        <div class="teacherDetails-img" ng-if="infor.url_img">
+            <img src="image/{{infor.url_img}}" alt="{{infor.user_name}}">
+            <!--<div class="url_img-img-tips">-->
                 <!--<span></span>-->
             <!--</div>-->
         </div>
@@ -112,17 +112,17 @@
             <div class="teacherDetails-row">
                 <div class="teacherDetails-colLeft">
                     <div class="teacherDetails-flag">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</div>
-                    <div class="teacherDetails-con" ng-bind="infor.name"></div>
+                    <div class="teacherDetails-con" ng-bind="infor.user_name"></div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">政治面貌:</div>
-                    <div class="teacherDetails-con" ng-bind="infor.politicsStatus"></div>
+                    <div class="teacherDetails-con" ng-bind="infor.political_outlook"></div>
                 </div>
             </div>
             <div class="teacherDetails-row">
                 <div class="teacherDetails-colLeft">
                     <div class="teacherDetails-flag">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</div>
-                    <div class="teacherDetails-con" ng-bind="infor.jobNumber"></div>
+                    <div class="teacherDetails-con" ng-bind="infor.user_num"></div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务:</div>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">工作邮箱:</div>
-                    <div class="teacherDetails-con" ng-bind="infor.email"></div>
+                    <div class="teacherDetails-con" ng-bind="infor.mail"></div>
                 </div>
             </div>
             <div class="teacherDetails-row">
@@ -144,7 +144,7 @@
                     <div class="teacherDetails-flag">所带班级:</div>
                     <div class="teacherDetails-con">
                         <select class="teacherDetails-con-options">
-                            <option ng-repeat="clazz in infor.clazz" ng-bind="clazz.clazzName"></option>
+                            <option ng-repeat="clazz in infor.schoolClassList" ng-bind="clazz.class_name"></option>
                         </select>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
             </div>
             <div class="teacherDetails-row">
                 <div class="teacherDetails-flag">个人简介:</div>
-                <div class="teacherDetails-con teacherDetails-area" ng-bind="infor.intro"></div>
+                <div class="teacherDetails-con teacherDetails-area" ng-bind="infor.introduce"></div>
             </div>
         </div>
     </div>
