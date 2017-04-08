@@ -88,14 +88,14 @@
         overflow: hidden;
     }
 </style>
-<div class="seeTeacherDetails">
+<div class="seeTeacherDetails" ng-repeat="infor in personDetails">
     <div class="seeTeacherDetails-top">
         <div class="seeTeacherDetails-title">教师详细信息</div>
         <div class="close-icno">
             <i class="glyphicon glyphicon-remove" ng-click="closeThisDialog()"></i>
         </div>
     </div>
-    <div class="seeTeacherDetails-content" ng-repeat="infor in personDetails">
+    <div class="seeTeacherDetails-content">
         <div class="teacherDetails-img" ng-if="!infor.url_img">
             <img src="image/person.jpg" alt="{{infor.user_name}}">
             <div class="teacherDetails-img-tips">

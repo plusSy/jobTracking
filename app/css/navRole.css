@@ -10,6 +10,16 @@
     float: left;
     border-right: 1px solid #080808;
 }
+/*.homeContainerList:before{*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*z-index: -1;*/
+    /*width: inherit;*/
+    /*background-color: inherit;*/
+    /*border: inherit;*/
+    /*content: "";*/
+/*}*/
 .navRoleHeight{
     height: 1900px;
 }

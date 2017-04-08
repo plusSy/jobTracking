@@ -20,13 +20,16 @@ $scope.addTeacher = function(){
                         $scope.closeThisDialog = function() {
                             ngDialog.close(); //关闭弹窗
                         };
+                        $rootScope.jobNumber = parseInt($rootScope.jobNumber);
+                        if(!isNaN($rootScope.jobNumber)){
+                            $rootScope.jobNumber = $rootScope.jobNumber+1;
+                        }
                         $scope.teacher = {
                             'name' : '',
                             'duty' : '',
                             'jobNumber' : $rootScope.jobNumber,
                             'oldPassword' : '123456'
                         };
-
 
                         //添加教师
                         $scope.addTeacher = function (teacher) {
@@ -130,7 +133,7 @@ $scope.seeTeacherDetails = function(teacherId){
                 };
                 temp.get(param,function(data) {
                     $scope.personDetails = data.result;
-                    console.log(personDetails);
+                    console.log($scope.personDetails );
                 },function(){
                     alert('请求失败');
                 });
@@ -192,7 +195,7 @@ function getAllTeacher (){
     var param ={
 
     };
-
+    debugger;
     temp.get(param,function(data) {
         $scope.allTeachers = data.result;
     },function(){

@@ -2,7 +2,9 @@
  * perfectInformationCtrl  完善信息
  * Created by applesyl on 2017/2/13.
  */
-App.controller('perfectTeacherInformationCtrl',function($scope,$rootScope,ngDialog,$stateParams){
+App.controller('perfectTeacherInformationCtrl',function($scope,$rootScope,ngDialog,$stateParams,$resource){
+
+    var teacherId = window.localStorage.user_id;
 
     $scope.changeTeacherPassword = function(){
         ngDialog.open({
@@ -20,4 +22,46 @@ App.controller('perfectTeacherInformationCtrl',function($scope,$rootScope,ngDial
         })
     };
 
- });
+    //查看个人教师信息
+    $scope.saveTeacherDetails = function(teacherId){
+        if(teacherId){
+            var temp = $resource( base_url +'teacher/select-teacher-details/:teacherId');
+            var param ={
+                'teacherId': teacherId
+            };
+            debugger;
+            temp.get(param,function(data) {
+                debugger;
+                $scope.personDetails = data.result;
+                console.log($scope.personDetails );
+            },function(){
+                alert('请求失败');
+            });
+        }
+    };
+    $scope.saveTeacherDetails(teacherId);
+
+    //更新信息
+    $scope.updateTeacherInfo = function(teacher){
+
+        var temp = $resource(base_url + 'teacher/update-teacher-details/:teacherId',{},{update:{'method':'put'}});
+        var para = {
+            'teacher_id':teacher.teacher_id,
+            'address' : teacher.address,
+            'introduce' : teacher.introduce,
+            'mail' : teacher.mail,
+            'phone' : teacher.phone,
+            'political_outlook' : teacher.political_outlook,
+            'url_img' : teacher.url_img
+        };
+        temp.update(para,{},function(data,header){
+            if (angular.isUndefined(data.error)) {
+                $scope.saveTeacherDetails();
+            } else {
+                //alert("您输入的用户名/密码不正确，请联系管理员！");
+            }
+        });
+    }
+
+
+});

@@ -4,10 +4,27 @@
             所带班级
         </div>
         <div class="classroom-list">
-            <ul>
-                <li ui-sref="index.manageClassroom.classroomManage({className:'1301'})" ui-sref-active='activeBackgroundColor'>13软件G3班</li>
-                <li ui-sref="index.manageClassroom.classroomManage({className:'1302'})" ui-sref-active='activeBackgroundColor'>13软件G3班</li>
-                <li ui-sref="index.manageClassroom.classroomManage({className:'1303'})" ui-sref-active='activeBackgroundColor'>13软件G3班</li>
+            <ul ng-if="teacherId == '226a09eca4dc48f58ebde159b7576617'">
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1301'})" ui-sref-active='activeBackgroundColor'>13电子G1班</li>
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1302'})" ui-sref-active='activeBackgroundColor'>13电子G2班</li>
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1303'})" ui-sref-active='activeBackgroundColor'>13通信G1班</li>
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1304'})" ui-sref-active='activeBackgroundColor'>13通信G2班</li>
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1305'})" ui-sref-active='activeBackgroundColor'>13软件G3班</li>
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1306'})" ui-sref-active='activeBackgroundColor'>13计科D班</li>
+            </ul>
+            <ul ng-if="teacherId == 'd364dded85fc4241abe8b135bcef6451'">
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1307'})" ui-sref-active='activeBackgroundColor'>13软件G1班</li>
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1308'})" ui-sref-active='activeBackgroundColor'>13计科G1班</li>
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1309'})" ui-sref-active='activeBackgroundColor'>13计科G2班</li>
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1310'})" ui-sref-active='activeBackgroundColor'>13网工G1班</li>
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1311'})" ui-sref-active='activeBackgroundColor'>13物网G1班</li>
+                <li ui-sref="index.manageClassroom.classroomManage({className:'1312'})" ui-sref-active='activeBackgroundColor'>13物网G2班</li>
+            </ul>
+            <ul ng-if="teacherId == '2'">
+                <li ui-sref="index.manageClassroom.classroomManage({className:'13013'})" ui-sref-active='activeBackgroundColor'>13网工G2班</li>
+            </ul>
+            <ul ng-if="teacherId == '0f9624e9b3334b7991854a3505696db7'">
+                <li ui-sref="index.manageClassroom.classroomManage({className:'13014'})" ui-sref-active='activeBackgroundColor'>13软件G2班</li>
             </ul>
         </div>
     </div>

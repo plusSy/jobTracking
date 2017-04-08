@@ -8,12 +8,12 @@
             <button class="addStudent" ng-click="addStudent()">添加学生</button>
         </div>
         <div class="header-menu">
-            <input type="text" class="menu-search" placeholder="请输入关键字">
-            <i class="glyphicon glyphicon-search menu-search-icno"></i>
+            <input type="text" class="menu-search" placeholder="请输入关键字" ng-model="sesrchText">
+            <i class="glyphicon glyphicon-search menu-search-icno" ng-click="getAllStudent(sesrchText)"></i>
         </div>
     </div>
     <div class="studentUsersTable">
-        <table border="1" class="teacherUsersTable">
+        <table border="1" class="teacherUsersTable" ng-table="tableParams">
             <thead>
             <tr>
                 <th style="width: 91px;">
@@ -38,33 +38,33 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr ng-repeat="stuInfo in allStudets">
                 <td>
                     <input type="checkbox">
                     {{$index+1}}
                 </td>
                 <td>
                     <!--<span ng-bind="details.name"></span>-->
-                    <span>20113330321</span>
+                    <span ng-bind="stuInfo.user_num"></span>
                 </td>
                 <td>
                     <!--<span ng-bind="details.unit"></span>-->
-                    <span>石一龙</span>
+                    <span ng-bind="stuInfo.user_name"></span>
                 </td>
                 <td>
                     <!--<span ng-bind="details.position"></span>-->
-                    <span>2013年9月</span>
+                    <span ng-bind="stuInfo.create_date"></span>
                 </td>
                 <td>
                     <!--<span ng-bind="details.regDate"></span>-->
-                    <span>是</span>
+                    <span ng-bind="stuInfo.is_work"></span>
                 </td>
                 <td>
                     <div class="operation-teacherUsers">
-                        <button class="operation-button" ng-click="cheangePassword()">修改密码</button>
-                        <button class="operation-button" ng-click="seeStudentDetails()">查看信息</button>
-                        <button class="operation-button" ng-click="removerTeacher()">删除</button>
-                        <button class="operation-button" ng-click="exhibition()">展示推荐</button>
+                        <button class="operation-button" ng-click="cheangePassword(stuInfo.student_id,stuInfo.user_num)">修改密码</button>
+                        <button class="operation-button" ng-click="seeStudentDetails(stuInfo.student_id)">查看信息</button>
+                        <button class="operation-button" ng-click="removerStudent(stuInfo.user_num,stuInfo.user_name)">删除</button>
+                        <button class="operation-button" ng-click="exhibition()">设置日期</button>
                     </div>
                 </td>
             </tr>

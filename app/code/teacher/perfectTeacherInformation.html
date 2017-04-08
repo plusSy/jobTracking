@@ -10,15 +10,15 @@
     </div>
 
 
-    <div class="seeTeacherDetails-contents">
-        <div class="teacherDetails-img" ng-if="!infor.image">
-            <img src="image/person.jpg" alt="{{infor.name}}">
+    <div class="seeTeacherDetails-contents" ng-repeat="info in personDetails">
+        <div class="teacherDetails-img" ng-if="!info.url_img">
+            <img src="image/person.jpg" alt="{{info.url_name}}">
             <div class="teacherDetails-img-tips">
                 <span>该教师还没有照片</span>
             </div>
         </div>
-        <div class="teacherDetails-img" ng-if="infor.image">
-            <img src="{{infor.image}}" alt="{{infor.name}}">
+        <div class="teacherDetails-img" ng-if="info.url_img">
+            <img src="{{info.url_img}}" alt="{{info.url_name}}">
             <!--<div class="teacherDetails-img-tips">-->
             <!--<span></span>-->
             <!--</div>-->
@@ -28,27 +28,27 @@
                 <div class="teacherDetails-colLeft">
                     <div class="teacherDetails-flag">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</div>
                     <div class="teacherDetails-con">
-                        <input class="teacherDetails-con-text" type="text">
+                        <input class="teacherDetails-con-text" type="text" ng-model="info.url_name">
                     </div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">政治面貌:</div>
                     <div class="teacherDetails-con">
-                        <input class="teacherDetails-con-text" type="text">
+                        <input class="teacherDetails-con-text" type="text" ng-model="info.political_outlook">
                     </div>
                 </div>
             </div>
             <div class="teacherDetails-row">
                 <div class="teacherDetails-colLeft">
-                    <div class="teacherDetails-flag">所在院系:</div>
+                    <div class="teacherDetails-flag">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</div>
                     <div class="teacherDetails-con">
-                        <input class="teacherDetails-con-text" type="text">
+                        <input class="teacherDetails-con-text" type="text" ng-model="info.user_num">
                     </div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务:</div>
                     <div class="teacherDetails-con">
-                        <input class="teacherDetails-con-text" type="text">
+                        <input class="teacherDetails-con-text" type="text" ng-model="info.position">
                     </div>
                 </div>
             </div>
@@ -56,13 +56,13 @@
                 <div class="teacherDetails-colLeft">
                     <div class="teacherDetails-flag">联系电话:</div>
                     <div class="teacherDetails-con">
-                        <input class="teacherDetails-con-text" type="number">
+                        <input class="teacherDetails-con-text" type="number" ng-model="info.phone">
                     </div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">工作邮箱:</div>
                     <div class="teacherDetails-con">
-                        <input class="teacherDetails-con-text" type="email">
+                        <input class="teacherDetails-con-text" type="email" ng-model="info.mail">
                     </div>
                 </div>
             </div>
@@ -71,29 +71,29 @@
                     <div class="teacherDetails-flag">所带班级:</div>
                     <div class="teacherDetails-con">
                         <select class="teacherDetails-con-select">
-                            <!--<option ng-repeat="clazz in infor.clazz" ng-bind="clazz.clazzName"></option>-->
-                            <option value="">13软件G3班</option>
-                            <option value="">12软件G3班</option>
-                            <option value="">11软件G3班</option>
+                            <option ng-repeat="clazz in info.schoolClassList" ng-bind="clazz.class_name"></option>
+                            <!--<option value="">13软件G3班</option>-->
+                            <!--<option value="">12软件G3班</option>-->
+                            <!--<option value="">11软件G3班</option>-->
                         </select>
                     </div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">家庭住址:</div>
                     <div class="teacherDetails-con">
-                        <input class="teacherDetails-con-text" type="text">
+                        <input class="teacherDetails-con-text" type="text" ng-model="info.address">
                     </div>
                 </div>
             </div>
             <div class="teacherDetails-row">
                 <div class="teacherDetails-flag">个人简介:</div>
-                <textarea class="teacherDetails-con teacherDetails-area"></textarea>
+                <textarea class="teacherDetails-con teacherDetails-area" ng-model="info.introduce"></textarea>
             </div>
         </div>
     </div>
 
     <div class="teacherInformation-buttom">
-        <button class="saveTheChange">保存</button>
+        <button class="saveTheChange" ng-click="updateTeacherInfo(info)">保存</button>
     </div>
 
 </div>

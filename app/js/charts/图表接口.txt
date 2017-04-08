@@ -1,0 +1,69 @@
+
+
+
+1、就业总体情况:
+        数组:
+            data.result:[
+                            {
+                                graduates: '2222',
+                                jobsNumber: '1111',
+                                probability: '50%',
+                                growth: '2%'
+                            },
+                        ]
+        说明:
+            graduates    ----  累计毕业生
+            jobsNumber   ----  累计就业人数
+            probability  ----  就业率
+            growth       ----  同比就业增长率
+
+2、就业行业分布:
+        数组:
+            data.result[0]:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+            data.result[1]:[
+                               {value:335, name:'直接访问'},
+                               {value:310, name:'邮件营销'},
+                               {value:234, name:'联盟广告'},
+                               {value:135, name:'视频广告'},
+                               {value:1548, name:'搜索引擎'}
+                           ]
+        说明:
+            data.result[0]  左侧的list;
+            data.result[1]  主要的饼状图,value指name对应的数量，与data.result[0]有对应关系。
+
+3、就业职位类别统计:
+        数组:
+            data.result[0]:['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            data.result[1]:[10, 52, 200, 334, 390, 330, 220]
+        说明:
+                    data.result[0]  x轴;
+                    data.result[1]  y轴，与data.result[0]有对应关系。
+
+4、就业率折线分布:
+        数组:
+            data.result[0]:['周一','周二','周三','周四','周五','周六','周日']
+            data.result[1]:[11, 11, 15, 13, 12, 13, 10]
+        说明:
+                    data.result[0]  x轴;
+                    data.result[1]  y轴，与data.result[0]有对应关系。
+
+5、就业城市分布地图:
+        数组:
+            data.result[0]:['周一','周二','周三','周四','周五','周六','周日']
+            data.result[1]:[11, 11, 15, 13, 12, 13, 10]
+        说明:
+                data.result:[
+                                {name: "海门", value: 9},
+                                {name: "鄂尔多斯", value: 12},
+                                {name: "招远", value: 12},
+                                {name: "舟山", value: 12},
+                                {name: "齐齐哈尔", value: 14},
+                                {name: "盐城", value: 15},
+                                {name: "赤峰", value: 16},
+                                {name: "青岛", value: 18},
+                                {name: "乳山", value: 18},
+                                {name: "金昌", value: 19},
+                                {name: "泉州", value: 21},
+                                {name: "莱西", value: 21}
+                            ]
+

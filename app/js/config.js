@@ -2,8 +2,6 @@
  * 主模块
  */
 
-var base_url = 'http://10.211.54.207:8080/test05/';
-
 var App = angular.module('App', ['ui.router', 'ngResource', 'ngDialog', 'oc.lazyLoad']);
 
     App.run(function() {
@@ -31,7 +29,7 @@ var App = angular.module('App', ['ui.router', 'ngResource', 'ngDialog', 'oc.lazy
         {
             name: 'ngTable',
             serie: true,
-            files: ["frameworks/ng-table/bundles/ng-table.js","frameworks/ng-table/bundles/ng-table.css"]
+            files: ["frameworks/ng-table/dist/ng-table.js","frameworks/ng-table/dist/ng-table.css"]
         },{
             name: 'DateTimePicker',
             serie: true,

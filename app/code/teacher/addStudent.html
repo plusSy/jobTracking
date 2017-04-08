@@ -72,24 +72,24 @@
         <div class="message">
             <div class="message-flag">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</div>
             <div class="message-details">
-                <input type="text">
+                <input type="text" ng-model="studentInfo.name">
             </div>
         </div>
         <div class="message">
             <div class="message-flag">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</div>
             <div class="message-details">
-                <input type="text">
+                <input type="text" ng-model="studentInfo.studentNumber">
             </div>
         </div>
         <div class="message">
             <div class="message-flag">初始密码：</div>
             <div class="message-details">
-                <input type="text">
+                <input type="text" ng-model="studentInfo.oldPassword">
             </div>
         </div>
     </div>
     <div class="addTeacher-buttons">
-        <button class="add-sure add-button">确定</button>
+        <button class="add-sure add-button" ng-click="addStudentInfo(studentInfo.name,studentInfo.studentNumber,studentInfo.oldPassword)">确定</button>
         <button class="add-cancel add-button" ng-click="closeThisDialog()">取消</button>
     </div>
 </div>
