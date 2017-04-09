@@ -5,12 +5,12 @@
             <span>完善个人工作信息</span>
         </div>
         <div class="add-jobInformation">
-            <button class="add-jobInformation-button" ui-sref="index.addJobInformation({jobId:1})">新增就业信息</button>
+            <button class="add-jobInformation-button" ui-sref="index.addJobInformation({param:2})">新增就业信息</button>
         </div>
     </div>
 
     <div class="jobInformation-table">
-        <table border="1" class="jobInformationTable">
+        <table border="1" class="jobInformationTable" ng-table="jobTableParams">
             <thead>
             <tr>
                 <th style="width: 66px;">
@@ -21,10 +21,10 @@
                     <span class="table-title">姓名</span>
                 </th>
                 <th style="width: 84px;">
-                    <span class="table-title">专业</span>
+                    <span class="table-title">公司性质</span>
                 </th>
                 <th style="width: 105px;">
-                    <span class="table-title">政治面貌</span>
+                    <span class="table-title">所在地区</span>
                 </th>
                 <th style="width: 425px;">
                     <span class="table-title">工作信息</span>
@@ -35,28 +35,28 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr ng-repeat="info in jobInfos">
                 <td>
                     <input type="checkbox">
-                    1
+                    {{$index+1}}
                 </td>
                 <td>
-                    <span>石一龙</span>
+                    <span ng-bind="info.user_name"></span>
                 </td>
                 <td>
-                    <span>软件工程</span>
+                    <span ng-bind="info.company_nature"></span>
                 </td>
                 <td>
-                    <span>中共党员</span>
+                    <span ng-bind="info.work_country"></span>
                 </td>
                 <td>
-                    <span>2013年2月至今 从事于山西大学商务学院信息学院</span>
+                    <span>{{info.work_time | date:'yyyy年MM月dd日'}} 从事于{{info.work_unit}}</span>
                 </td>
                 <td>
                     <div class="operation-teacherUsers">
-                        <button class="operation-button" ui-sref="index.addJobInformation({jobId:1})">查看</button>
-                        <button class="operation-button" ui-sref="index.addJobInformation({jobId:1})">编辑</button>
-                        <button class="operation-button" ng-click="removerJobInformation()">删除</button>
+                        <button class="operation-button" ui-sref="index.addJobInformation({param:1,workTime:info.work_time,isView:true})">查看</button>
+                        <button class="operation-button" ui-sref="index.addJobInformation({param:1})">编辑</button>
+                        <button class="operation-button" ng-click="removerJobInformation(info.work_time,info.user_name)">删除</button>
                     </div>
                 </td>
             </tr>

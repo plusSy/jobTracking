@@ -15,7 +15,7 @@
                 就业单位名称:
             </div>
             <div class="addJobInformation-content">
-                <input class="addJobInformation-content-text" type="text" placeholder="请输入公司名称">
+                <input class="addJobInformation-content-text" type="text" placeholder="请输入公司名称" ng-model="jobInfo.work_unit">
             </div>
         </div>
         <!--公司性质-->
@@ -88,7 +88,7 @@
                 工作城市:
             </div>
             <div class="addJobInformation-content">
-                <input class="addJobInformation-content-text" type="text" placeholder="请输入公司所在城市名称">
+                <input class="addJobInformation-content-text" type="text" placeholder="请输入公司所在城市名称" ng-model="jobInfo.work_country">
             </div>
         </div>
         <!--月薪-->
@@ -127,7 +127,7 @@
             </div>
             <div class="addJobInformation-content input-group">
                 <div class="input-group date form_date clickShowTimePicker beginWorkTime" data-date-format="yyyy-mm-dd">
-                    <input type="text" >
+                    <input type="text" ng-model="jobInfo.work_time">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -140,13 +140,13 @@
                 备注:
             </div>
             <div class="addJobInformation-content-area">
-                <textarea class="addJobInformation-content-textarea"></textarea>
+                <textarea class="addJobInformation-content-textarea" ng-model="jobInfo.remarks"></textarea>
             </div>
         </div>
         <!--保存   取消-->
         <div class="addJobInformation-row-button">
             <div class="">
-                <button class="addJobInformation-content-button addJobInformation-save" ng-click="addJobInformation()">保存</button>
+                <button class="addJobInformation-content-button addJobInformation-save" ng-click="addJobInformation(jobInfo)">保存</button>
                 <button class="addJobInformation-content-button addJobInformation-cancel" ui-sref="index.jobInformation">取消</button>
             </div>
         </div>

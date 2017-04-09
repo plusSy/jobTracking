@@ -143,9 +143,9 @@ App.config(function ($stateProvider,$urlRouterProvider) {
                     }]
                 }
             })
-            //新增就业信息
+            //新增／查看就业信息
             .state("index.addJobInformation",{
-                url : "^/addJobInformation?jobId",
+                url : "^/addJobInformation?param&workTime&isView",
                 views : {
                     "viewDetails@index" : {
                         templateUrl : 'code/student/addJobInformation.html',
