@@ -71,7 +71,7 @@ App.controller('perfectTeacherInformationCtrl',function($scope,$rootScope,ngDial
         var temp = $resource(base_url + 'teacher/update-teacher-details/:teacherId',{},{update:{'method':'put'}});
         var para = {
             'teacherId':teacher.teacher_id
-        }
+        };
         var paras = {
             'address' : teacher.address,
             'introduce' : teacher.introduce,
@@ -81,10 +81,8 @@ App.controller('perfectTeacherInformationCtrl',function($scope,$rootScope,ngDial
             'political_outlook' : teacher.political_outlook,
             'url_img' : teacher.url_img
         };
-        debugger;
         temp.update(para,paras,function(data,header){
             if (angular.isUndefined(data.error)) {
-                debugger;
                 $scope.saveTeacherDetails();
             } else {
                 //alert("您输入的用户名/密码不正确，请联系管理员！");

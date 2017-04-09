@@ -2,7 +2,7 @@
  * personInformationCtrl 个人信息
  * Created by applesyl on 2017/2/13.
  */
-App.controller('studentPersonInformationCtrl',function($scope,$rootScope,ngDialog,$stateParams){
+App.controller('studentPersonInformationCtrl',function($scope,$rootScope,ngDialog,$stateParams,$resource){
 
 
     var studentId = window.localStorage.user_id;
@@ -27,7 +27,7 @@ App.controller('studentPersonInformationCtrl',function($scope,$rootScope,ngDialo
         }
     };
 
-    $scope.personDetails = [{
+    $scope.stuInfos = [{
         image:'image/person.jpg',
         name : '石一龙',
         specialty : '软件工程',
@@ -58,25 +58,49 @@ App.controller('studentPersonInformationCtrl',function($scope,$rootScope,ngDialo
         intro : '这是一个十分敬业的老师'
     }];
 
-    ////通过studentsId查询专家详情
-    //function queryPersonExperts() {
-    //    var temp = $resource(base_url + 'personals/expert-info/:personalId');
-    //    var param = {
-    //        personalId:window.localStorage.user_id
-    //    };
-    //    temp.get(param,function(data){
-    //        if(angular.isUndefined(data.error)){
-    //            $scope.personDetails = data.result;
-    //        }else{
-    //            var message = $filter('T')(data.error.code+""+data.error.error_subcode);
-    //            ngDialog.open({data:{'message':message},template: 'message',className:'short-message'});
-    //        }
-    //    });
-    //}
-    //
-    ////当参数存在的时候执行查询函数
-    //if(window.localStorage.user_id){
-    //    queryPersonExperts();
-    //}
 
+    //查看学生个人信息
+    $scope.saveStuDetails = function(studentId){
+        if(studentId){
+            var temp = $resource( base_url +'/student/select-student-details/:userId');
+            var param ={
+                'userId': studentId
+            };
+            temp.get(param,function(data) {
+                debugger;
+                $scope.stuInfos = data.result;
+                console.log($scope.stuInfos );
+            },function(){
+                alert('请求失败');
+            });
+        }
+    };
+    $scope.saveStuDetails(studentId);
+
+    //学生更新信息
+    $scope.updateStuInfo = function(student){
+
+        var temp = $resource(base_url + 'student/update-student-details/:studentId',{},{update:{'method':'put'}});
+        var para = {
+            'studentId':student.student_id
+        };
+        var paras = {
+            'current_address' : student.current_address,
+            'introduce' : student.introduce,
+            'email' : student.email,
+            'phone' : student.phone,
+            'url_img' : student.url_img,
+            'specialty': student.specialty
+        };
+        debugger;
+        temp.update(para,paras,function(data,header){
+            if (angular.isUndefined(data.error)) {
+                debugger;
+                alert('修改成功');
+                $scope.saveStuDetails();
+            } else {
+                //alert("您输入的用户名/密码不正确，请联系管理员！");
+            }
+        });
+    }
 });

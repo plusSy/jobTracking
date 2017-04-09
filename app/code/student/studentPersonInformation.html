@@ -6,15 +6,15 @@
             <button ng-click="changeStudentPassword()">修改密码</button>
         </div>
     </div>
-    <div class="seeTeacherDetails-content" ng-repeat="infor in personDetails">
-        <div class="teacherDetails-img" ng-if="!infor.image">
-            <img src="image/person.jpg" alt="{{infor.name}}">
+    <div class="seeTeacherDetails-content">
+        <div class="teacherDetails-img" ng-if="!stuInfos.url_img">
+            <img src="image/person.jpg" alt="{{stuInfos.user_name}}">
             <div class="teacherDetails-img-tips">
                 <span>该学生还没有照片</span>
             </div>
         </div>
-        <div class="teacherDetails-img" ng-if="infor.image">
-            <img src="{{infor.image}}" alt="{{infor.name}}">
+        <div class="teacherDetails-img" ng-if="stuInfos.url_img">
+            <img src="{{stuInfos.url_img}}" alt="{{stuInfos.user_name}}">
             <!--<div class="teacherDetails-img-tips">-->
             <!--<span></span>-->
             <!--</div>-->
@@ -24,13 +24,13 @@
                 <div class="teacherDetails-colLeft">
                     <div class="teacherDetails-flag">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</div>
                     <div class="teacherDetails-con" >
-                        <input type="text" ng-model="infor.name">
+                        <input type="text" ng-model="stuInfos.user_name">
                     </div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">所属专业:</div>
                     <div class="teacherDetails-con">
-                        <input type="text"  ng-model="infor.specialty">
+                        <input type="text"  ng-model="stuInfos.specialty">
                     </div>
                 </div>
             </div>
@@ -38,13 +38,13 @@
                 <div class="teacherDetails-colLeft">
                     <div class="teacherDetails-flag">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</div>
                     <div class="teacherDetails-con">
-                        <input type="text" ng-model="infor.studentNumber">
+                        <input type="text" ng-model="stuInfos.user_num">
                     </div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">是否就业:</div>
                     <div class="teacherDetails-con">
-                        <input type="text" ng-model="infor.job">
+                        <input type="text" ng-model="stuInfos.is_work">
                     </div>
                 </div>
             </div>
@@ -52,13 +52,13 @@
                 <div class="teacherDetails-colLeft">
                     <div class="teacherDetails-flag">联系电话:</div>
                     <div class="teacherDetails-con">
-                        <input type="text" ng-model="infor.phone">
+                        <input type="text" ng-model="stuInfos.phone">
                     </div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">工作邮箱:</div>
                     <div class="teacherDetails-con">
-                        <input type="text" ng-model="infor.email">
+                        <input type="text" ng-model="stuInfos.email">
                     </div>
                 </div>
             </div>
@@ -67,26 +67,26 @@
                     <div class="teacherDetails-flag">就业详情:</div>
                     <div class="teacherDetails-con">
                         <select class="teacherDetails-con-options">
-                            <option ng-repeat="clazz in infor.clazz" ng-bind="clazz.clazzName"></option>
+                            <option ng-repeat="clazz in stuInfos.clazz" ng-bind="clazz.clazzName"></option>
                         </select>
                     </div>
                 </div>
                 <div class="teacherDetails-colRight">
                     <div class="teacherDetails-flag">现住址:</div>
                     <div class="teacherDetails-con">
-                        <input type="text" ng-model="infor.address">
+                        <input type="text" ng-model="stuInfos.current_address">
                     </div>
                 </div>
             </div>
             <div class="teacherDetails-row-textarea">
                 <div class="teacherDetails-flag">个人简介:</div>
                 <div class="teacherDetails-con">
-                    <textarea class="teacherDetails-area" ng-model="infor.intro"></textarea>
+                    <textarea class="teacherDetails-area" ng-model="stuInfos.introduce"></textarea>
                 </div>
             </div>
             <div class="teacherDetails-row">
                 <div class="teacherDetails-buttons">
-                    <button class="teacherDetails-button">保存</button>
+                    <button class="teacherDetails-button" ng-click="updateStuInfo(stuInfos)">保存</button>
                 </div>
             </div>
         </div>
