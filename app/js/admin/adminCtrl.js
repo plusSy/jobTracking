@@ -132,8 +132,7 @@ $scope.seeTeacherDetails = function(teacherId){
                     'teacherId': teacherId
                 };
                 temp.get(param,function(data) {
-                    $scope.personDetails = data.result;
-                    console.log($scope.personDetails );
+                    $scope.teacInfo = data.result;
                 },function(){
                     alert('请求失败');
                 });

@@ -6,7 +6,7 @@ App.controller('perfectTeacherInformationCtrl',function($scope,$rootScope,ngDial
 
     var teacherId = window.localStorage.user_id;
 
-    $scope.changeTeacherPassword = function(){
+    $scope.changeTeacherPassword = function(teacId,teacNum){
         ngDialog.open({
             width: 410,
             template: 'code/common/changePassword.html',
@@ -14,11 +14,37 @@ App.controller('perfectTeacherInformationCtrl',function($scope,$rootScope,ngDial
             showClose: false,
             closeByDocument : false,
             closeByEscape : false,
-            controller: function($scope) {
+            controller:  ['$scope', '$resource', function($scope, $resource) {
                 $scope.closeThisDialog = function() {
                     ngDialog.close(); //关闭弹窗
                 };
-            }
+                $scope.ok = function(){
+                    if (!teacId) {
+                        return
+                    }
+                    if($scope.password.newPassword != $scope.password.conformPassword){
+                        alert('两次密码输入不一致。');
+                        return;
+                    }
+                    var temp = $resource(base_url + 'user/update-user-password/:userId',{},{update:{'method':'put'}});
+                    var para = {
+                        'userId' : teacId,
+                        'userNum' : teacNum,
+                        'oldPassword' : $scope.password.oldPassword,
+                        'newPassword' : $scope.password.newPassword,
+                        'resPassword' : $scope.password.conformPassword
+                    };
+                    temp.update(para,{},function(data,header){
+                        if (angular.isUndefined(data.error)) {
+                            alert('修改成功,请牢记密码.');
+                            ngDialog.close(); //关闭弹窗
+                        } else {
+                            //alert(data.error);
+                            alert("原始密码错误，如果忘记，请联系管理员修改！");
+                        }
+                    });
+                }
+            }]
         })
     };
 
@@ -29,9 +55,7 @@ App.controller('perfectTeacherInformationCtrl',function($scope,$rootScope,ngDial
             var param ={
                 'teacherId': teacherId
             };
-            debugger;
             temp.get(param,function(data) {
-                debugger;
                 $scope.personDetails = data.result;
                 console.log($scope.personDetails );
             },function(){
@@ -46,16 +70,21 @@ App.controller('perfectTeacherInformationCtrl',function($scope,$rootScope,ngDial
 
         var temp = $resource(base_url + 'teacher/update-teacher-details/:teacherId',{},{update:{'method':'put'}});
         var para = {
-            'teacher_id':teacher.teacher_id,
+            'teacherId':teacher.teacher_id
+        }
+        var paras = {
             'address' : teacher.address,
             'introduce' : teacher.introduce,
             'mail' : teacher.mail,
             'phone' : teacher.phone,
+            'position' : teacher.position,
             'political_outlook' : teacher.political_outlook,
             'url_img' : teacher.url_img
         };
-        temp.update(para,{},function(data,header){
+        debugger;
+        temp.update(para,paras,function(data,header){
             if (angular.isUndefined(data.error)) {
+                debugger;
                 $scope.saveTeacherDetails();
             } else {
                 //alert("您输入的用户名/密码不正确，请联系管理员！");

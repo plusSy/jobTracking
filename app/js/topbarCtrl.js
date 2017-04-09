@@ -8,6 +8,8 @@ App.controller('topbarCtrl',function($scope,$state){
 
     $scope.clearUser = function(){
         localStorage.removeItem('user_name');
+        localStorage.removeItem('login_type');
+        localStorage.removeItem('user_id');
         $state.go('login');
     }
 });

@@ -23,11 +23,6 @@ App.controller('classroomManageCtrl',function($scope,$rootScope,$stateParams,ngD
                    $scope.closeThisDialog = function() {
                        ngDialog.close(); //关闭弹窗
                    };
-                   //
-                   //if (!isNaN(studentNumber))
-                   //{
-                   //    studentNumber = studentNumber+1;
-                   //}
                    $scope.studentInfo = {
                        'name' : '',
                        'studentNumber' : studentNumber,
@@ -98,6 +93,7 @@ App.controller('classroomManageCtrl',function($scope,$rootScope,$stateParams,ngD
                     };
                     temp.update(para,{},function(data,header){
                         if (angular.isUndefined(data.error)) {
+                            alert('修改成功');
                             ngDialog.close(); //关闭弹窗
                             $rootScope.getAllStudent();
                         } else {
@@ -129,8 +125,8 @@ App.controller('classroomManageCtrl',function($scope,$rootScope,$stateParams,ngD
                 debugger;
                 temp.get(param,function(data) {
                     debugger;
-                    $scope.personDetails = data.result;
-                    console.log($scope.personDetails );
+                    $scope.infor = data.result;
+                    console.log($scope.infor);
                 },function(){
                     alert('请求失败');
                 });
