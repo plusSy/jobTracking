@@ -12,6 +12,7 @@
     "yargs": "^5.0.0"
   },
   "devDependencies": {
+    "echarts": "^3.5.2",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-jshint": "^2.0.1",

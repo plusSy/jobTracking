@@ -18,70 +18,6 @@
                 <input class="addJobInformation-content-text" type="text" placeholder="请输入公司名称" ng-model="jobInfo.work_unit">
             </div>
         </div>
-        <!--公司性质-->
-        <div class="addJobInformation-row">
-            <div class="addJobInformation-flag">
-               公司性质:
-            </div>
-            <div class="addJobInformation-content">
-                <select class="addJobInformation-content-select">
-                    <option value="">政府机关</option>
-                    <option value="">IT</option>
-                </select>
-            </div>
-        </div>
-        <!--行业类别-->
-        <div class="addJobInformation-row">
-            <div class="addJobInformation-flag">
-                行业类别:
-            </div>
-            <div class="addJobInformation-content">
-                <select class="addJobInformation-content-select">
-                    <option value="">IT|通信|电子|互联网</option>
-                    <option value="">金融业</option>
-                    <option value="">房地产|建筑业</option>
-                </select>
-            </div>
-        </div>
-        <!--从属行业-->
-        <div class="addJobInformation-row">
-            <div class="addJobInformation-flag">
-                从属行业:
-            </div>
-            <div class="addJobInformation-content">
-                <select class="addJobInformation-content-select">
-                    <option value="">互联网／电子商务</option>
-                    <option value="">计算机软件</option>
-                    <option value="">IT服务(系统／数据／维护)</option>
-                </select>
-            </div>
-        </div>
-        <!--职位类别-->
-        <div class="addJobInformation-row">
-            <div class="addJobInformation-flag">
-                职位类别:
-            </div>
-            <div class="addJobInformation-content">
-                <select class="addJobInformation-content-select">
-                    <option value="">销售|客服|市场</option>
-                    <option value="">财务|人力资源|行政</option>
-                    <option value="">项目|质量|高级管理</option>
-                </select>
-            </div>
-        </div>
-        <!--从属职位-->
-        <div class="addJobInformation-row">
-            <div class="addJobInformation-flag">
-                从属职位:
-            </div>
-            <div class="addJobInformation-content">
-                <select class="addJobInformation-content-select">
-                    <option value="">销售业务</option>
-                    <option value="">销售管理</option>
-                    <option value="">销售行政／服务</option>
-                </select>
-            </div>
-        </div>
         <!--工作城市-->
         <div class="addJobInformation-row">
             <div class="addJobInformation-flag">
@@ -91,17 +27,54 @@
                 <input class="addJobInformation-content-text" type="text" placeholder="请输入公司所在城市名称" ng-model="jobInfo.work_country">
             </div>
         </div>
+        <!--公司性质-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+               公司性质:
+            </div>
+            <div class="addJobInformation-content">
+                <select class="addJobInformation-content-select" ng-model="jobInfo.property" ng-options="x for x in companyNature">
+                    <option value="">请选择</option>
+                </select>
+            </div>
+        </div>
+        <!--职位类别-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                职位类别:
+            </div>
+            <div class="addJobInformation-content">
+                <select class="addJobInformation-content-select" ng-model="jobInfo.job_category" ng-options="x.comPosi for x in companyPosition" ng-change="querySelectption(jobInfo.job_category.po_id)">
+                <!--<select class="addJobInformation-content-select" ng-model="jobinfo.job_category">-->
+                    <option value="">请选择</option>
+                    <!--<option value="" ng-change="querySelectption(1)">财务|人力资源|行政</option>-->
+                    <!--<option value="" ng-change="querySelectption(2)">项目|质量|高级管理</option>-->
+                </select>
+            </div>
+        </div>
+        <!--从属职位-->
+        <div class="addJobInformation-row">
+            <div class="addJobInformation-flag">
+                从属职位:
+            </div>
+            <div class="addJobInformation-content">
+                <select class="addJobInformation-content-select" ng-model="jobInfo.position" ng-options="x.industry_name for x in companyPositionList">
+                    <option value="">请选择</option>
+                    <!--<option value="">销售业务</option>-->
+                    <!--<option value="">销售管理</option>-->
+                    <!--<option value="">销售行政／服务</option>-->
+                </select>
+            </div>
+        </div>
         <!--月薪-->
         <div class="addJobInformation-row">
             <div class="addJobInformation-flag">
                 月薪:
             </div>
             <div class="addJobInformation-content">
-                <input name="salary" type="radio">1000以下
-                <input name="salary" type="radio">1000--3000
-                <input name="salary" type="radio">3000--5000
-                <input name="salary" type="radio">5000--8000
-                <input name="salary" type="radio">8000以上
+                <select class="addJobInformation-content-select" ng-model="jobInfo.salary" ng-options="x for x in companySalary">
+                    <option value="">请选择</option>
+                </select>
             </div>
         </div>
         <!--就业信息获取渠道-->
@@ -110,13 +83,8 @@
                 就业信息获取渠道:
             </div>
             <div class="addJobInformation-content">
-                <select class="addJobInformation-content-select">
-                    <option value="">学校校园网</option>
-                    <option value="">校园招聘会</option>
-                    <option value="">新闻媒体</option>
-                    <option value="">人才介绍机构</option>
-                    <option value="">社会其他招聘网站</option>
-                    <option value="">亲友介绍</option>
+                <select class="addJobInformation-content-select" ng-model="jobInfo.job_trench" ng-options="x for x in companyTrench">
+                    <option value="">请选择</option>
                 </select>
             </div>
         </div>

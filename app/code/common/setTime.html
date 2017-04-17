@@ -1,0 +1,91 @@
+<style>
+    .remove{
+        width: 330px;
+        height: 180px;
+    }
+    .remove-top{
+        overflow: hidden;
+    }
+    .topics{
+        float: left;
+        border-bottom: 1px dashed #080808;
+        font-size: 18px;
+    }
+    .close-icno{
+        float: right;
+        cursor: pointer;
+    }
+    .remove-content{
+        width: 300px;
+        margin: 35px auto 0;
+        text-align: center;
+        color: #080808;
+        font-size:20px;
+    }
+    .content-topics{
+        text-align: right;
+        font-size: 14px;
+        color: orange;
+        margin-top: 15px;
+        margin-right: 10px;
+    }
+    .remove-buttons{
+        width: 300px;
+        margin-top: 30px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .remove-button{
+        width: 70px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid #080808;
+        background-color: #c0c0c0;
+    }
+    .remove-button:hover{
+        color: #c0c0c0;
+        background-color: #080808;
+    }
+    .remove-yes{
+        margin-right: 35px;
+    }
+</style>
+<div class="remove">
+    <div class="remove-top">
+        <div class="topics">温馨提示</div>
+        <div class="close-icno">
+            <i class="glyphicon glyphicon-remove" ng-click="closeThisDialog()"></i>
+        </div>
+    </div>
+    <div class="addJobInformation-row">
+        <div class="addJobInformation-flag">
+            起始工作年份:{{setEmailTime}}
+        </div>
+        <div class="addJobInformation-content input-group">
+            <div class="input-group date form_date clickShowTimePicker beginWorkTime" data-date-format="yyyy-MM-dd">
+                <input type="text" ng-model="setEmailTime">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="remove-buttons">
+        <button class="remove-yes remove-button" ng-click="ok()">确定</button>
+        <button class="remove-no remove-button" ng-click="closeThisDialog()">取消</button>
+    </div>
+</div>
+
+<script>
+    //绑定datetimepicker的日期控件
+    $('.clickShowTimePicker').datetimepicker({
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+</script>

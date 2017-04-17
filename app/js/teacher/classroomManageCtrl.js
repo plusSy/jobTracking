@@ -46,7 +46,6 @@ App.controller('classroomManageCtrl',function($scope,$rootScope,$stateParams,ngD
                            'class_id' : classroomId,
                            'role_id' : '3'
                        };
-                       debugger;
                        getAccount.save({}, para, function(data) {
                            if(angular.isUndefined(data.error)) {
                                ngDialog.close();
@@ -237,6 +236,45 @@ App.controller('classroomManageCtrl',function($scope,$rootScope,$stateParams,ngD
                 }
             );
         }
+    };
+
+    //设置倒计时时间
+    $scope.setEmailDate = function(stuId){
+        ngDialog.open({
+            scope: $scope,
+            width: 360,
+            template: 'code/common/setTime.html',
+            className: 'ngdialog-theme-default',
+            showClose : false,
+            closeByDocument : false,
+            closeByEscape : false,
+            controller: ['$scope', '$resource', function($scope, $resource) {
+                $scope.closeThisDialog = function() {
+                    ngDialog.close(); //关闭弹窗
+                };
+                $scope.ok = function(){
+                    ngDialog.close();
+                    if (!stuId) {
+                        return
+                    }
+                    var temp = $resource(base_url + 'teacher/insert-student-topic-date/:userId',{},{update:{'method':'put'}});
+                    var para = {
+                        userId: stuId,
+                        'topicDate' : $scope.setEmailTime
+                    };
+                    debugger;
+                    temp.update(para,{},function(data,header){
+                        if (angular.isUndefined(data.error)) {
+                            debugger;
+                            ngDialog.close(); //关闭弹窗
+                            $rootScope.getAllStudent();
+                        } else {
+                            //alert("您输入的用户名/密码不正确，请联系管理员！");
+                        }
+                    });
+                }
+            }]
+        });
     };
 
     //查询学生学号
