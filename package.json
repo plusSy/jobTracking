@@ -1,24 +1,23 @@
 {
-  "name": "毕业设计",
+  "name": "web",
   "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "gulp-connect": "^5.0.0",
-    "gulp-ng-config": "^1.4.0",
-    "gulp-rename": "^1.2.2",
-    "ng-table": "^3.0.1",
-    "yargs": "^5.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plusSy/jobTracking.git"
   },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plusSy/jobTracking/issues"
+  },
+  "homepage": "https://github.com/plusSy/jobTracking#readme",
   "devDependencies": {
-    "echarts": "^3.5.2",
     "gulp": "^3.9.1",
-    "gulp-connect": "^5.0.0",
-    "gulp-jshint": "^2.0.1",
-    "gulp-ng-config": "^1.3.1",
-    "gulp-rename": "^1.2.2",
-    "jshint": "^2.9.2",
-    "yargs": "^5.0.0"
+    "gulp-connect": "^5.0.0"
   }
 }
